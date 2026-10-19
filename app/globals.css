@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: vazivmatn;
+  src: url("/Vazirmatn-Regular.ttf");
+}
+@font-face {
+  font-family:Kamran ;
+  src: url("/Far_KamrnBd.ttf");
+}
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0C0F13;
+  --foreground: #FABE2C;
+  --second-background: #101318;
+
+  --green-ok: #278052;
+  --red-reject: #AF4448;
+  --gray-nothing: #767D85;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-second-background: var(--second-background);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-green-ok: var(--green-ok);
+  --color-red-reject: var(--red-reject);
+  --color-gray-nothing: var(--gray-nothing);
+
+  --font-sans: "Vazirmatn", sans-serif;
+  --font-kamran: "Kamran", sans-serif;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+  font-family: vazivmatn, sans-serif;
 }
