@@ -50,8 +50,9 @@ export default function LoginPage() {
 
   return (
     <section className="min-h-screen flex items-center justify-center w-full">
+        <img src="bg.png" alt="" className="inset-0 relative" />
       {/* <img src="bookLogin.jpg" alt="" className="inset-0 relative" /> */}
-      <div className="w-fit flex items-center justify-center px-7 py-10 sm:px-12 lg:px-20 mx-auto absolute z-100 bg-[#d9ad8398] rounded-2xl">
+      <div className="w-fit flex items-center justify-center px-7 py-10 sm:px-12 lg:px-20 mx-auto  z-100 bg-[#fac02c72] shadow-2xl rounded-xl absolute right-30">
         {/* <div className="w-full max-w-[380px] mx-auto flex justify-center items-center"></div> */}
         {user !== null ? (
           <div className="flex flex-col items-center text-center gap-5">
@@ -61,11 +62,11 @@ export default function LoginPage() {
 
             <div>
               <p className="text-3xl font-bold text-[#33231F]">
-                Hello <span className="text-[#3B3616]"> {user?.name}</span>
+                سلام <span className="text-[#3B3616]"> {user?.name}</span>
               </p>
 
               <p className="text-sm text-[#33231F] mt-2">
-                You are successfully logged in.
+              با موفقیت وارد شدید.
               </p>
             </div>
 
@@ -78,36 +79,37 @@ export default function LoginPage() {
           </div>
         ) : (
           <div>
-            <form onSubmit={handleSubmit} className="space-y-5 ">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-10 ">
+                <h1 className="flex justify-center items-center font-bold text-3xl text-background">لطفا اطلاعات خود را وارد کنید.</h1>
               <div>
-                <label className="block text-xs font-medium text-[#33231F] mb-2">
-                  Name
+                <label className="block text-lg font-medium text-background mb-2">
+                  نام کاربری
                 </label>
 
                 <div className="relative">
                   <UserRound
                     size={17}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-[#33231F]"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-background"
                   />
 
                   <input
                     type="text"
                     value={name}
-                    placeholder="Your name"
+                    placeholder="نام کاربری..."
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full text-foreground h-12 rounded-xl border border-[#dce5ec] bg-[#fbfcfd] pl-11 pr-4 text-sm outline-none focus:border-[#33231F] transition  placeholder:text-foreground"
+                    className="w-full text-background h-11 rounded-xl border border-[#dce5ec] bg-[#d9d6ce] pl-11 pr-4 text-sm outline-none focus:border-[#33231F] transition  placeholder:text-background"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-medium text-[#33231F] mb-2">
-                  Email
+                <label className="block text-lg font-bold text-background mb-2">
+                  ایمیل
                 </label>
 
                 <div className="relative">
                   <Mail
                     size={17}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-[#33231F]"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-background"
                   />
 
                   <input
@@ -115,16 +117,16 @@ export default function LoginPage() {
                     value={email}
                     placeholder="you@example.com"
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full h-12  text-foreground rounded-xl border border-[#dce5ec] bg-[#fbfcfd] pl-11 pr-4 text-sm outline-none focus:border-[#33231F] transition placeholder:text-foreground"
+                    className="w-full h-11  text-background rounded-xl border border-[#dce5ec] bg-[#d9d6ce] pl-11 pr-4 text-sm outline-none focus:border-[#33231F] transition placeholder:text-background"
                   />
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full h-12 rounded-full bg-[#4C4531] text-white text-sm font-semibold shadow-md hover:bg-[#33231F] transition"
+                className="w-full h-12 rounded-full bg-foreground text-background text-sm font-semibold shadow-md hover:bg-second-background hover:text-foreground transition"
               >
-                submit
+                ورود
               </button>
             </form>
           </div>

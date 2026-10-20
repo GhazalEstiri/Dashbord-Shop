@@ -22,7 +22,7 @@ const salesData = [
 
 export default function SalesChart() {
   return (
-    <div className="h-75 w-200 fixed bottom-20 left-0 " >
+    <div className="h-75 w-300 fixed bottom-20 left-0 " >
         <h1 className="text-foreground flex items-center justify-center mb-7">آمار فروش محصولات</h1>
       <ResponsiveContainer height="100%" width="100%" >
         <LineChart

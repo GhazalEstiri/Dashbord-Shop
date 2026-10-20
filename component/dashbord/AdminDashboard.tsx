@@ -55,6 +55,7 @@ export default function AdminDashboard() {
           </article>
         ))}
       </section>
+      
     </div>
   );
 }

@@ -3,6 +3,7 @@ export default function UserPannel() {
   return (
     <div>
       <SideBar role="user"></SideBar>
+      
     </div>
   );
 }

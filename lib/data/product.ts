@@ -58,7 +58,7 @@ export const products: Product[] = [
   },
   {
     id: 9,
-    title: "هایلایتر طلایی",
+    title: "هایلایتر ",
     status: "available",
     price: 610000,
   },
