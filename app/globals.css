@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "daisyui";
 @font-face {
   font-family: vazivmatn;
   src: url("/Vazirmatn-Regular.ttf");
