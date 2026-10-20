@@ -13,6 +13,7 @@ import {
   Bookmark,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { title } from "process";
 type Role = "admin" | "user" | "vendor";
 
 // const menuItems = [
@@ -25,7 +26,6 @@ type Role = "admin" | "user" | "vendor";
 //   { title: "علاقه مندی ها ", href: "/favorite", icon: Bookmark },
 //   { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
 // ];
-
 
 const menuItemRole = {
   user: [
@@ -53,14 +53,23 @@ const menuItemRole = {
     { title: "مدیریت محصولات", href: "/productManager", icon: LayoutList },
     { title: "مدیریت فروشگاه", href: "/vendorManager", icon: Store },
     { title: "مدیریت کاربران", href: "/userManager", icon: UserGroup },
-    { title: "آمار فروشندگان", href: "/reportVendor", icon: MessageSquareWarning },
+    {
+      title: "آمار فروشندگان",
+      href: "/reportVendor",
+      icon: MessageSquareWarning,
+    },
     { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
   ],
 };
-function SideBar({role}:{role:Role}) {
+const status = [
+  { role: "admin", title: "پنل مدیریت" },
+  { role: "user", title: "پنل کاربر" },
+  { role: "vendor", title: "پنل فروشنده" },
+];
+function SideBar({ role }: { role: Role }) {
   const pathname = usePathname();
-  const menuItems=menuItemRole[role]
-
+  const menuItems = menuItemRole[role];
+  const statusRole= status.find((item)=> item.role===role)
   return (
     <aside
       dir="rtl"
@@ -76,7 +85,11 @@ function SideBar({role}:{role:Role}) {
           ویترین
         </Link>
       </div>
-
+     {statusRole&&(
+      <p className="flex justify-center items-center mx-auto text-foreground mt-10">{statusRole.title}</p>
+     )}
+   
+    
       <div className="flex flex-col gap-10 mt-10">
         <nav className="flex flex-col gap-2">
           {menuItems.map(({ title, href, icon: Icon }) => {
@@ -103,7 +116,7 @@ function SideBar({role}:{role:Role}) {
         </nav>
         <div className="mt-auto border-t border-white/10 pt-4">
           <p className="text-center text-xs text-gray-nothing">
-            پنل مدیریت ویترین
+            پنل ویترین
           </p>
         </div>
       </div>
