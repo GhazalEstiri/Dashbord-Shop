@@ -10,19 +10,57 @@ import {
   IdCard,
   ShoppingCart,
   ChevronLeft,
+  Bookmark,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
-const menuItems = [
-  { title: "داشبورد", href: "/", icon: House },
-  { title: "محصولات", href: "/product", icon: LayoutList },
-  { title: "سفارشات", href: "/order", icon: ShoppingCartMinus },
-  { title: "مشتریان", href: "/customer", icon: UserGroup },
-  { title: "فروشندگان", href: "/vendor", icon: Store },
-  { title: "گزارش‌ها", href: "/report", icon: MessageSquareWarning },
-  { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
-];
-function SideBar() {
+type Role = "admin" | "user" | "vendor";
+
+// const menuItems = [
+//   { title: "داشبورد", href: "/", icon: House },
+//   { title: "محصولات", href: "/product", icon: LayoutList },
+//   { title: "سبد خرید", href: "/order", icon: ShoppingCartMinus },
+//   { title: "مشتریان", href: "/customer", icon: UserGroup },
+//   { title: "فروشندگان", href: "/vendor", icon: Store },
+//   { title: "گزارش‌ها", href: "/report", icon: MessageSquareWarning },
+//   { title: "علاقه مندی ها ", href: "/favorite", icon: Bookmark },
+//   { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
+// ];
+
+
+const menuItemRole = {
+  user: [
+    { title: "داشبورد", href: "/", icon: House },
+    { title: "محصولات", href: "/product", icon: LayoutList },
+    { title: "سبد خرید", href: "/order", icon: ShoppingCartMinus },
+    { title: "علاقه مندی ها ", href: "/favorite", icon: Bookmark },
+    { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
+  ],
+  vendor: [
+    { title: "داشبورد", href: "/", icon: House },
+    { title: "محصولات", href: "/product", icon: LayoutList },
+
+    { title: "آمار و گزارش‌ها", href: "/report", icon: MessageSquareWarning },
+    {
+      title: "مدیریت سفارش ها",
+      href: "/orderManager",
+      icon: ShoppingCartMinus,
+    },
+
+    { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
+  ],
+  admin: [
+    { title: "داشبورد", href: "/", icon: House },
+    { title: "مدیریت محصولات", href: "/productManager", icon: LayoutList },
+    { title: "مدیریت فروشگاه", href: "/vendorManager", icon: Store },
+    { title: "مدیریت کاربران", href: "/userManager", icon: UserGroup },
+    { title: "آمار فروشندگان", href: "/reportVendor", icon: MessageSquareWarning },
+    { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
+  ],
+};
+function SideBar({role}:{role:Role}) {
   const pathname = usePathname();
+  const menuItems=menuItemRole[role]
+
   return (
     <aside
       dir="rtl"
