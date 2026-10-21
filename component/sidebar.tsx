@@ -11,6 +11,9 @@ import {
   ShoppingCart,
   ChevronLeft,
   Bookmark,
+  MessageCircle,
+  MapPinHouse,
+  LogOut,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { title } from "process";
@@ -26,39 +29,78 @@ type Role = "admin" | "user" | "vendor";
 //   { title: "علاقه مندی ها ", href: "/favorite", icon: Bookmark },
 //   { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
 // ];
-
 const menuItemRole = {
   user: [
     { title: "داشبورد", href: "/", icon: House },
-    { title: "محصولات", href: "/product", icon: LayoutList },
-    { title: "سبد خرید", href: "/order", icon: ShoppingCartMinus },
-    { title: "علاقه مندی ها ", href: "/favorite", icon: Bookmark },
-    { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
+    { title: "آدرس ها", href: "/sideBarRoute/adress", icon: MapPinHouse },
+    {
+      title: "دیدگاه و پرسش ها ",
+      href: "/sideBarRoute/comment",
+      icon: MessageCircle,
+    },
+    {
+      title: "سفارش ها ",
+      href: "/sideBarRoute/orderstatus",
+      icon: ShoppingCartMinus,
+    },
+    { title: "علاقه مندی ها ", href: "/sideBarRoute/favorite", icon: Bookmark },
+    {
+      title: "اطلاعات حساب کاربری",
+      href: "/sideBarRoute/accountUser",
+      icon: IdCard,
+    },
+    { title: "خروج از حساب کاربری ", href: "/login", icon: LogOut },
   ],
   vendor: [
     { title: "داشبورد", href: "/", icon: House },
-    { title: "محصولات", href: "/product", icon: LayoutList },
+    { title: "محصولات", href: "/sideBarRoute/product", icon: LayoutList },
 
-    { title: "آمار و گزارش‌ها", href: "/report", icon: MessageSquareWarning },
+    {
+      title: "آمار و گزارش‌ها",
+      href: "/sideBarRoute/report",
+      icon: MessageSquareWarning,
+    },
     {
       title: "مدیریت سفارش ها",
-      href: "/orderManager",
+      href: "/sideBarRoute/orderManager",
       icon: ShoppingCartMinus,
     },
 
-    { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
+    {
+      title: "اطلاعات حساب کاربری",
+      href: "/sideBarRoute/accountVendor",
+      icon: IdCard,
+    },
+    { title: "خروج از حساب کاربری ", href: "/login", icon: LogOut },
   ],
   admin: [
     { title: "داشبورد", href: "/", icon: House },
-    { title: "مدیریت محصولات", href: "/productManager", icon: LayoutList },
-    { title: "مدیریت فروشگاه", href: "/vendorManager", icon: Store },
-    { title: "مدیریت کاربران", href: "/userManager", icon: UserGroup },
+    {
+      title: "مدیریت محصولات",
+      href: "/sideBarRoute/productManager",
+      icon: LayoutList,
+    },
+    {
+      title: "مدیریت فروشگاه",
+      href: "/sideBarRoute/vendorManager",
+      icon: Store,
+    },
+    {
+      title: "مدیریت کاربران",
+      href: "/sideBarRoute/userManager",
+      icon: UserGroup,
+    },
     {
       title: "آمار فروشندگان",
-      href: "/reportVendor",
+      href: "/sideBarRoute/reportVendor",
       icon: MessageSquareWarning,
     },
-    { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
+    {
+      title: "اطلاعات حساب کاربری",
+      href: "/sideBarRoute/accountAdmin",
+      icon: IdCard,
+    },
+    { title: "خروج از حساب کاربری ", href: "/login", icon: LogOut },
   ],
 };
 const status = [
@@ -69,7 +111,7 @@ const status = [
 function SideBar({ role }: { role: Role }) {
   const pathname = usePathname();
   const menuItems = menuItemRole[role];
-  const statusRole= status.find((item)=> item.role===role)
+  const statusRole = status.find((item) => item.role === role);
   return (
     <aside
       dir="rtl"
@@ -85,11 +127,12 @@ function SideBar({ role }: { role: Role }) {
           ویترین
         </Link>
       </div>
-     {statusRole&&(
-      <p className="flex justify-center items-center mx-auto text-foreground mt-10">{statusRole.title}</p>
-     )}
-   
-    
+      {statusRole && (
+        <p className="flex justify-center items-center mx-auto text-foreground mt-10">
+          {statusRole.title}
+        </p>
+      )}
+
       <div className="flex flex-col gap-10 mt-10">
         <nav className="flex flex-col gap-2">
           {menuItems.map(({ title, href, icon: Icon }) => {
@@ -115,9 +158,7 @@ function SideBar({ role }: { role: Role }) {
           })}
         </nav>
         <div className="mt-auto border-t border-white/10 pt-4">
-          <p className="text-center text-xs text-gray-nothing">
-            پنل ویترین
-          </p>
+          <p className="text-center text-xs text-gray-nothing">پنل ویترین</p>
         </div>
       </div>
     </aside>

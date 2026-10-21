@@ -26,7 +26,7 @@ export default function SalesChart() {
       <h1 className="text-foreground flex items-center justify-center mb-7 md:mr-50 ">
         آمار فروش محصولات
       </h1>
-        <ResponsiveContainer height="100%" width="100%" className="max-w-300 max-h-75 flex mx-auto lg:mr-85">
+        <ResponsiveContainer height="100%" width="100%" className="max-w-300 max-h-75 flex mx-auto lg:mr-85  ">
           <LineChart
             data={salesData}
             margin={{ top: 10, right: 20, left: 10, bottom: 10 }}
