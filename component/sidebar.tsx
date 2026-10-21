@@ -73,7 +73,7 @@ function SideBar({ role }: { role: Role }) {
   return (
     <aside
       dir="rtl"
-      className="fixed right-0 top-0 flex h-screen w-72 flex-col
+      className="fixed right-0 top-0 hidden md:flex h-screen w-72 flex-col
       overflow-y-auto border-l border-white/10 bg-second-background p-5"
     >
       <div>

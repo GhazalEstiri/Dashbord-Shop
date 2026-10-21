@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 export default function UserDashbord() {
   return (
-    <section className="mr-80 mt-10">
+    <section className="md:mr-80 mt-10">
       <div className=" flex justify-between items-center px-10">
         <div className="flex flex-row items-center gap-3">
           <p className="bg-[#272B31] rounded-full text-foreground p-3">

@@ -24,7 +24,7 @@ const stats = [
 
 export default function VendorDashboard() {
   return (
-    <div className="space-y-8 flex mr-80 flex-col mt-10 ml-8">
+    <div className="space-y-8 flex md:mr-80 flex-col mt-10 md:ml-8 px-10">
       <header>
         <h1 className="text-3xl font-bold text-foreground ">داشبورد فروشنده</h1>
 

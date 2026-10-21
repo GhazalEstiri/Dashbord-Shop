@@ -1,95 +1,136 @@
-
-"use client";
-
 import {
-  ResponsiveContainer,
   BarChart,
   Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-} from "recharts";
+  Legend,
+  TooltipContentProps,
+  TooltipIndex,
+  useRechartsTheme,
+} from 'recharts';
 
-const storesData = [
-  { name: "فروشگاه آوا", sales: 125 },
-  { name: "فروشگاه نیلا", sales: 110 },
-  { name: "فروشگاه ماهور", sales: 98 },
-  { name: "فروشگاه آترین", sales: 90 },
-  { name: "فروشگاه رستا", sales: 82 },
-  { name: "فروشگاه دیبا", sales: 75 },
-  { name: "فروشگاه مانا", sales: 68 },
-  { name: "فروشگاه هانا", sales: 55 },
-  { name: "فروشگاه ویانا", sales: 42 },
-  { name: "فروشگاه باران", sales: 30 },
+// #region Sample data
+const data = [
+  {
+    name: 'Page A',
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: 'Page B',
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: 'Page C',
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: 'Page D',
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: 'Page E',
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: 'Page F',
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: 'Page G',
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
 ];
 
-export default function TopStoresChart() {
+// #endregion
+ const getIntroOfPage = (label: string | number | undefined) => {
+  if (label === 'Page A') {
+    return "Page A is about men's clothing";
+  }
+  if (label === 'Page B') {
+    return "Page B is about women's dress";
+  }
+  if (label === 'Page C') {
+    return "Page C is about women's bag";
+  }
+  if (label === 'Page D') {
+    return 'Page D is about household goods';
+  }
+  if (label === 'Page E') {
+    return 'Page E is about food';
+  }
+  if (label === 'Page F') {
+    return 'Page F is about baby food';
+  }
+  return '';
+};
+
+ const CustomTooltip = ({ active, payload, label }: TooltipContentProps) => {
+  const theme = useRechartsTheme();
+  const firstPayload = payload?.[0];
+  const isVisible = active && firstPayload != null;
   return (
     <div
-      dir="rtl"
-      className="w-full rounded-2xl border border-white/10
-      bg-[#101318] p-5 text-white"
+      className="custom-tooltip"
+      style={{
+        ...theme?.typography,
+        ...theme?.tooltip?.contentStyle,
+        visibility: isVisible ? 'visible' : 'hidden',
+      }}
     >
-      <h2 className="mb-1 text-lg font-bold text-[#FABE2C]">
-        رتبه‌بندی فروشگاه‌ها
-      </h2>
-
-      <p className="mb-6 text-sm text-gray-400">
-        بیشترین فروش در مهرماه
-      </p>
-
-      <div className="h-[350px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={storesData}
-            layout="vertical"
-            margin={{ top: 5, right: 10, left: 20, bottom: 5 }}
-          >
-            <CartesianGrid
-              strokeDasharray="3 3"
-              stroke="#292D33"
-            />
-
-            <XAxis
-              type="number"
-              tick={{ fill: "#9CA3AF", fontSize: 11 }}
-              axisLine={false}
-              tickLine={false}
-            />
-
-            <YAxis
-              type="category"
-              dataKey="name"
-              width={100}
-              tick={{ fill: "#D1D5DB", fontSize: 11 }}
-              axisLine={false}
-              tickLine={false}
-            />
-
-            <Tooltip
-              formatter={(value) => [
-                `${value} میلیون تومان`,
-                "میزان فروش",
-              ]}
-              contentStyle={{
-                backgroundColor: "#0C0F13",
-                border: "1px solid #FABE2C",
-                borderRadius: "8px",
-                color: "#fff",
-              }}
-            />
-
-            <Bar
-              dataKey="sales"
-              name="فروش"
-              fill="#FABE2C"
-              radius={[0, 5, 5, 0]}
-              barSize={18}
-            />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
+      {isVisible && (
+        <>
+          <p className="label">{`${label} : ${firstPayload.value}`}</p>
+          <p className="intro">{getIntroOfPage(label)}</p>
+          <p className="desc">Anything you want can be displayed here.</p>
+        </>
+      )}
     </div>
   );
-}
+};
+
+const CustomContentOfTooltip = ({
+  isAnimationActive,
+  defaultIndex,
+}: {
+  isAnimationActive?: boolean;
+  defaultIndex?: TooltipIndex;
+}) => {
+  return (
+    <BarChart
+      style={{ width: '100%', maxWidth: '300px', maxHeight: '70vh', aspectRatio: 1.618 }}
+      responsive
+      data={data}
+      margin={{
+        top: 5,
+        right: 0,
+        left: 0,
+        bottom: 0,
+      }}
+    >
+      <CartesianGrid />
+      <XAxis dataKey="name" niceTicks="snap125" />
+      <YAxis width="auto" niceTicks="snap125" />
+      <Tooltip content={CustomTooltip} isAnimationActive={isAnimationActive} defaultIndex={defaultIndex} />
+      <Legend />
+      <Bar dataKey="pv" barSize={20} isAnimationActive={isAnimationActive} />
+    </BarChart>
+  );
+};
+
+export default CustomContentOfTooltip;

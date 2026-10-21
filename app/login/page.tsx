@@ -49,8 +49,8 @@ export default function LoginPage() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center w-full">
-        <img src="bg.png" alt="" className="inset-0 relative" />
+    <section className="h-screen flex items-center justify-center w-full">
+        <img src="bg.png" alt="" className="inset-0 relative h-screen w-full" />
       {/* <img src="bookLogin.jpg" alt="" className="inset-0 relative" /> */}
       <div className="w-fit flex items-center justify-center px-7 py-10 sm:px-12 lg:px-20 mx-auto  z-100 bg-[#fac02c72] shadow-2xl rounded-xl absolute right-30">
         {/* <div className="w-full max-w-[380px] mx-auto flex justify-center items-center"></div> */}
