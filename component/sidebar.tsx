@@ -32,43 +32,43 @@ type Role = "admin" | "user" | "vendor";
 const menuItemRole = {
   user: [
     { title: "داشبورد", href: "/", icon: House },
-    { title: "آدرس ها", href: "/sideBarRoute/adress", icon: MapPinHouse },
+    { title: "آدرس ها", href: "/adress", icon: MapPinHouse },
     {
       title: "دیدگاه و پرسش ها ",
-      href: "/sideBarRoute/comment",
+      href: "/comment",
       icon: MessageCircle,
     },
     {
       title: "سفارش ها ",
-      href: "/sideBarRoute/orderstatus",
+      href: "/orderstatus",
       icon: ShoppingCartMinus,
     },
-    { title: "علاقه مندی ها ", href: "/sideBarRoute/favorite", icon: Bookmark },
+    { title: "علاقه مندی ها ", href: "/favorite", icon: Bookmark },
     {
       title: "اطلاعات حساب کاربری",
-      href: "/sideBarRoute/accountUser",
+      href: "/account",
       icon: IdCard,
     },
     { title: "خروج از حساب کاربری ", href: "/login", icon: LogOut },
   ],
   vendor: [
     { title: "داشبورد", href: "/", icon: House },
-    { title: "محصولات", href: "/sideBarRoute/product", icon: LayoutList },
+    { title: "محصولات", href: "/product", icon: LayoutList },
 
     {
       title: "آمار و گزارش‌ها",
-      href: "/sideBarRoute/report",
+      href: "/report",
       icon: MessageSquareWarning,
     },
     {
       title: "مدیریت سفارش ها",
-      href: "/sideBarRoute/orderManager",
+      href: "/orderManager",
       icon: ShoppingCartMinus,
     },
 
     {
       title: "اطلاعات حساب کاربری",
-      href: "/sideBarRoute/accountVendor",
+      href: "/account",
       icon: IdCard,
     },
     { title: "خروج از حساب کاربری ", href: "/login", icon: LogOut },
@@ -77,27 +77,27 @@ const menuItemRole = {
     { title: "داشبورد", href: "/", icon: House },
     {
       title: "مدیریت محصولات",
-      href: "/sideBarRoute/productManager",
+      href: "/productManager",
       icon: LayoutList,
     },
     {
       title: "مدیریت فروشگاه",
-      href: "/sideBarRoute/vendorManager",
+      href: "/vendorManager",
       icon: Store,
     },
     {
       title: "مدیریت کاربران",
-      href: "/sideBarRoute/userManager",
+      href: "/userManager",
       icon: UserGroup,
     },
     {
       title: "آمار فروشندگان",
-      href: "/sideBarRoute/reportVendor",
+      href: "/reportVendor",
       icon: MessageSquareWarning,
     },
     {
       title: "اطلاعات حساب کاربری",
-      href: "/sideBarRoute/accountAdmin",
+      href: "/account",
       icon: IdCard,
     },
     { title: "خروج از حساب کاربری ", href: "/login", icon: LogOut },

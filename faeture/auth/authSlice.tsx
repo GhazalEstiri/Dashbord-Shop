@@ -28,8 +28,11 @@ export const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
     },
+    localUser:(state,action :PayloadAction<User>)=>{
+      state.user=action.payload
+    }
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout,localUser } = authSlice.actions;
 export const authReducer = authSlice.reducer;
