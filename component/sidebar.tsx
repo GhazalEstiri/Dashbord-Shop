@@ -9,14 +9,14 @@ import {
   LayoutList,
   IdCard,
   ShoppingCart,
-  ChevronLeft,
   Bookmark,
   MessageCircle,
   MapPinHouse,
   LogOut,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { title } from "process";
+import { useSelector } from "react-redux";
+import type { Rootstate } from "@/lib/store";
 type Role = "admin" | "user" | "vendor";
 
 // const menuItems = [
@@ -108,10 +108,15 @@ const status = [
   { role: "user", title: "پنل کاربر" },
   { role: "vendor", title: "پنل فروشنده" },
 ];
-function SideBar({ role }: { role: Role }) {
+function SideBar() {
   const pathname = usePathname();
-  const menuItems = menuItemRole[role];
-  const statusRole = status.find((item) => item.role === role);
+  const roleUser = useSelector((state: Rootstate) => state.auth.user?.role);
+  if (!roleUser) {
+    return null;
+  }
+  const menuItems = menuItemRole[roleUser];
+  const statusRole = status.find((item) => item.role === roleUser);
+
   return (
     <aside
       dir="rtl"

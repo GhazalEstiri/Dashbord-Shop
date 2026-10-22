@@ -28,14 +28,8 @@ export default function LoginPage() {
     if (foundUser && foundUser.name === name) {
       dispatch(login(foundUser));
 
-      if (foundUser.role === "admin") {
-        router.push("/admin");
-      }
-      if (foundUser.role === "user") {
-        router.push("/user");
-      }
-      if (foundUser.role === "vendor") {
-        router.push("/vendor");
+      if (foundUser.role){
+        router.push("/dashbord")
       }
     } else {
       alert("کسی نیستتت");
