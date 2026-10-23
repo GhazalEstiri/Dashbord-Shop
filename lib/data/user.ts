@@ -1,7 +1,5 @@
 type StatuUser = "Active" | "Inactive";
-
 type Role = "admin" | "user" | "vendor";
-
 type User = {
   id: number;
   email: string;

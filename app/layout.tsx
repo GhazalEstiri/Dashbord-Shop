@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./storeProvider";
 import { ReactNode } from "react";
+import { ThemeProvider } from "@/component/theme-provider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,9 +28,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <StoreProvider>
-           {children}
-           </StoreProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <StoreProvider>{children}</StoreProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

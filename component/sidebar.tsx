@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { ModeToggle } from "@/component/ThemeToggle";
 import {
   House,
   MessageSquareWarning,
@@ -164,6 +165,9 @@ function SideBar() {
         </nav>
         <div className="mt-auto border-t border-white/10 pt-4">
           <p className="text-center text-xs text-gray-nothing">پنل ویترین</p>
+        </div>
+        <div>
+          <ModeToggle />
         </div>
       </div>
     </aside>

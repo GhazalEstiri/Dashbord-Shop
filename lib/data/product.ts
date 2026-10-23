@@ -1,5 +1,4 @@
 type StatusProduct = "available" | "unavailable";
-
 type Product = {
   id: number;
   title: string;

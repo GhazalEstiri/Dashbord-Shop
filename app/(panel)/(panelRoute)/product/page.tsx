@@ -140,7 +140,7 @@ export default function Product() {
           </form>
           <div className="modal-action">
             <form method="dialog">
-              <button className="btn bg-background text-foreground border-none">Close</button>
+              <button className="btn bg-background text-foreground border-none">بستن</button>
             </form>
           </div>
         </div>

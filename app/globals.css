@@ -5,20 +5,37 @@
   src: url("/Vazirmatn-Regular.ttf");
 }
 @font-face {
-  font-family:Kamran ;
+  font-family: Kamran;
   src: url("/Far_KamrnBd.ttf");
 }
 /* FABE2C */
 :root {
-  --background: #0C0F13;
-  --foreground: #FABE2C;
+  --background: #0c0f13;
+  --foreground: #fabe2c;
   --second-background: #101318;
 
   --green-ok: #278052;
-  --red-reject: #AF4448;
-  --gray-nothing: #767D85;
+  --red-reject: #af4448;
+  --gray-nothing: #767d85;
 }
+.light {
+  --background: #FAF8F3;
+  --foreground: #C49A35;
+  --second-background: #e8d6b5;
 
+  --green-ok: #278052;
+  --red-reject: #af4448;
+  --gray-nothing: #767d85;
+}
+/* .dark {
+  --background: #0c0f13;
+  --foreground: #fabe2c;
+  --second-background: #101318;
+
+  --green-ok: #278052;
+  --red-reject: #af4448;
+  --gray-nothing: #767d85;
+} */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -34,6 +51,6 @@
 
 body {
   background: var(--background);
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: vazivmatn, sans-serif;
 }
