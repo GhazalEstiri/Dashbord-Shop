@@ -11,9 +11,7 @@ export default function Product() {
   const dispatch = useDispatch<AppDispatch>();
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const [status, setStatus] = useState<"available" | "unavailable">(
-    "available",
-  );
+  const [status, setStatus] = useState<"موجود" | "ناموجود">("موجود");
   function handleAdd(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (title === "" || price === "") {
@@ -29,7 +27,7 @@ export default function Product() {
     );
     setPrice("");
     setTitle("");
-    setStatus("available");
+    setStatus("موجود");
     (document.getElementById("my_modal_1") as HTMLDialogElement)?.close();
   }
 
@@ -80,7 +78,7 @@ export default function Product() {
               name=""
               id=""
               onChange={(e) =>
-                setStatus(e.target.value as "available" | "unavailable")
+                setStatus(e.target.value as "موجود" | "ناموجود")
               }
             >
               <option value="موجود">موجود</option>

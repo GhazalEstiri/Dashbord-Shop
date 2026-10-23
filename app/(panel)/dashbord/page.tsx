@@ -15,7 +15,7 @@ export default function RolePage() {
   return (
     <div>
       {role === "admin" && (
-        <div className="flex justify-between flex-col gap-20">
+        <div className="flex flex-col gap-20">
           <AdminDashboard />
           <SalesChart />
         </div>
