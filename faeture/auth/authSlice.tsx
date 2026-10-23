@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 type Role = "admin" | "user" | "vendor";
+type StatuUser = "Active" | "Inactive";
 
 type User = {
   id: number;
   email: string;
   name: string;
-  // status: StatuUser;
+  status: StatuUser;
   role: Role;
   // password: string;
 };
