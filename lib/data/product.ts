@@ -17,7 +17,7 @@ export const products: Product[] = [
   {
     id: 2,
     title: "رژ لب مایع",
-    status: "available",
+    status: "unavailable",
     price: 380000,
   },
   {
@@ -65,7 +65,7 @@ export const products: Product[] = [
   {
     id: 10,
     title: "پودر فیکس ",
-    status: "available",
+    status: "unavailable",
     price: 720000,
   },
 ];
