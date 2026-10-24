@@ -8,7 +8,7 @@ import {
   Legend,
   TooltipContentProps,
   TooltipIndex,
-  useRechartsTheme,
+  // useRechartsTheme,
 } from 'recharts';
 
 // #region Sample data

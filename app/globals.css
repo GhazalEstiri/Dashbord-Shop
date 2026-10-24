@@ -13,44 +13,60 @@
   --background: #0c0f13;
   --foreground: #fabe2c;
   --second-background: #101318;
-
+  --text-base: #ffffff;
+  --text-title: #999999;
   --green-ok: #278052;
   --red-reject: #af4448;
   --gray-nothing: #767d85;
 }
 .light {
-  --background: #FAF8F3;
-  --foreground: #C49A35;
+  /* --background: #faf8f3;
+  --foreground: #c49a35;
   --second-background: #e8d6b5;
-
+  --text-base: #000000;
   --green-ok: #278052;
+  --text-title: #29251a;
+
+  --red-reject: #af4448;
+  --gray-nothing: #767d85; */
+  --background: #ffffff;
+  --foreground: #c49a35;
+  --second-background: #faf8f3;
+
+  --text-base: #000000;
+  --green-ok: #278052;
+  --text-title: #29251a;
+
   --red-reject: #af4448;
   --gray-nothing: #767d85;
 }
-/* .dark {
+.dark {
   --background: #0c0f13;
   --foreground: #fabe2c;
+  --text-title: #999999;
   --second-background: #101318;
-
+  --text-base: #ffffff;
   --green-ok: #278052;
   --red-reject: #af4448;
   --gray-nothing: #767d85;
-} */
+  --gray-nothing: #767d85;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-second-background: var(--second-background);
-
+  --color-text-base: var(--text-base);
   --color-green-ok: var(--green-ok);
   --color-red-reject: var(--red-reject);
   --color-gray-nothing: var(--gray-nothing);
-
+  --color-text-title: var(--text-title);
   --font-sans: "Vazirmatn", sans-serif;
   --font-kamran: "Kamran", sans-serif;
 }
 
 body {
   background: var(--background);
-  color: #ffffff;
+  color: var(--text-base);
+
   font-family: vazivmatn, sans-serif;
 }

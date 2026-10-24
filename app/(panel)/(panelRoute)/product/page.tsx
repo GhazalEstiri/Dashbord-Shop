@@ -36,11 +36,11 @@ export default function Product() {
     dispatch(deleteProduct(id));
   }
   return (
-    <section className="flex flex-col mr-70 gap-10 px-20">
+    <section className="flex flex-col md:mr-70 gap-10 px-10 md:px-20">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
           <h1 className="text-foreground text-3xl font-bold">مدیریت محصولات</h1>
-          <p className="text-gray-400 text-xl">
+          <p className="text-text-title text-xl">
             مدیریت موجودی، قیمت و وضعیت محصولات
           </p>
         </div>
@@ -54,9 +54,9 @@ export default function Product() {
           return (
             <div
               key={item.id}
-              className=" border-b border-white/10 bg-second-background p-5 flex flex-row justify-between items-center gap-5 "
+              className=" border-b border-white/10 bg-second-background p-5 flex flex-col md:flex-row justify-between items-center gap-5 "
             >
-              <div className="flex flex-row items-center gap-10">
+              <div className="flex flex-col text-center md:text-start md:flex-row items-center gap-10">
                 <p className="bg-[#29251A] rounded-full p-3 text-foreground">
                   <ShoppingBag />
                 </p>
@@ -93,8 +93,8 @@ export default function Product() {
       >
         اضافه کردن محصول
       </button>
-      <dialog id="my_modal_1" className="modal ">
-        <div className="modal-box bg-background">
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box bg-second-background">
           <form action="" onSubmit={handleAdd} className=" flex flex-col gap-5">
             <p className="text-foreground">نام محصول:</p>
             <input
@@ -102,7 +102,7 @@ export default function Product() {
               value={title}
               placeholder="نام محصول را وارد کنید."
               onChange={(e) => setTitle(e.target.value)}
-              className="bg-second-background h-10 outline-none"
+              className="bg-background h-10 outline-none "
             />
             <p className="text-foreground">قیمت محصول:</p>
 
@@ -113,7 +113,7 @@ export default function Product() {
               onChange={(e) => setPrice(e.target.value)}
               className="bg-second-background h-10 outline-none"
             />
-            <div className="bg-background text-white w-full">
+            <div className="bg-background text-text-base w-full">
               <p className="text-foreground">وضعیت محصول:</p>
               <select
                 name=""
@@ -121,14 +121,14 @@ export default function Product() {
                 onChange={(e) =>
                   setStatus(e.target.value as "موجود" | "ناموجود")
                 }
-                className=" text-gray-400 h-10 outline-none cursor-pointer"
+                className=" text-text-title h-10 outline-none cursor-pointer"
               >
-                <option value="موجود" className="bg-white text-background">
+                <option value="موجود" className="bg-text-base text-background">
                   موجود
                 </option>
                 <option
                   value="ناموجود"
-                  className="bg-white text-background hover:bg-foreground "
+                  className="bg-text-base text-background hover:bg-foreground "
                 >
                   ناموجود
                 </option>

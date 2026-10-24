@@ -30,7 +30,7 @@ export default function AdminDashboard() {
           داشبورد مدیریت
         </h1>
 
-        <p className="mt-2 text-gray-400">
+        <p className="mt-2 text-text-title">
           به پنل مدیریت فروشگاه ویترین خوش آمدید.
         </p>
       </header>
@@ -41,7 +41,7 @@ export default function AdminDashboard() {
             key={stat.title}
             className="rounded-2xl border border-white/10 bg-second-background p-5"
           >
-            <h2 className="text-sm text-gray-400">
+            <h2 className="text-sm text-text-title">
               {stat.title}
             </h2>
 
@@ -49,7 +49,7 @@ export default function AdminDashboard() {
               {stat.value}
             </p>
 
-            <p className="mt-3 text-sm text-gray-500">
+            <p className="mt-3 text-sm text-text-title">
               {stat.description}
             </p>
           </article>

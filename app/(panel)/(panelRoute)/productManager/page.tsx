@@ -13,11 +13,11 @@ export default function ProductManager() {
     dispatch(deleteProduct(id));
   }
   return (
-    <section className=" flex flex-col mr-70 gap-10 px-20">
+    <section className=" flex flex-col md:mr-70 gap-10 px-20">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
           <h1 className="text-foreground text-3xl font-bold">مدیریت محصولات</h1>
-          <p className="text-gray-400 text-xl">
+          <p className="text-text-title text-xl">
             مدیریت موجودی، قیمت و وضعیت محصولات
           </p>
         </div>

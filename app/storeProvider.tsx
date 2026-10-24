@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { store } from "@/lib/store";
-import { authSlice } from "@/faeture/auth/authSlice";
+// import { authSlice } from "@/faeture/auth/authSlice";
 import { localUser } from "@/faeture/auth/authSlice";
 const STORAGE_KEY = "user-dashbord-app";
 

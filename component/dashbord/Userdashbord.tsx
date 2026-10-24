@@ -26,20 +26,20 @@ export default function UserDashbord() {
         </p>
       </div>
       <div className="flex flex-row w-full mt-10 gap-5 px-10">
-        <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-1/2 text-gray-400 flex flex-col gap-3">
+        <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-1/2 text-text-title flex flex-col gap-3">
           <p className="text-foreground text-2xl">
             <Handbag />
           </p>
           <p>سفارش های من</p>
-          <p className="text-white font-bold text-3xl">۲۵</p>
+          <p className="text-text-base font-bold text-3xl">۲۵</p>
           <p>مجموع سفارش ها</p>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-1/2  text-gray-400 flex flex-col gap-3">
+        <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-1/2  text-text-title flex flex-col gap-3">
           <p className="text-foreground text-2xl">
             <Heart />
           </p>
           <p>علاقه مندی ها</p>
-          <p className="text-white font-bold text-3xl">۵</p>
+          <p className="text-text-base font-bold text-3xl">۵</p>
           <p>محصول ذخیره شده</p>
         </div>
       </div>
@@ -64,7 +64,7 @@ export default function UserDashbord() {
                 value="70"
                 max="100"
               ></progress>
-              <div className="flex justify-between text-gray-400">
+              <div className="flex justify-between text-text-title">
                 <p>ثبت سفارش</p>
                 <p>ارسال</p>
                 <p>تحویل</p>
@@ -90,7 +90,7 @@ export default function UserDashbord() {
             </p>
             <div>
               <p>اطلاعات شخصی</p>
-              <p className="text-gray-400">نام، ایمیل و شماره تماس</p>
+              <p className="text-text-title">نام، ایمیل و شماره تماس</p>
             </div>
           </div>
           <p className="">
@@ -104,7 +104,7 @@ export default function UserDashbord() {
             </p>
             <div>
               <p> آدرس‌های من</p>
-              <p className="text-gray-400">مدیریت آدرس‌های ارسال</p>
+              <p className="text-text-title">مدیریت آدرس‌های ارسال</p>
             </div>
           </div>
           <p className="">
@@ -118,7 +118,7 @@ export default function UserDashbord() {
             </p>
             <div>
               <p> پرداخت‌ها</p>
-              <p className="text-gray-400"> سوابق پرداخت و خرید</p>
+              <p className="text-text-title"> سوابق پرداخت و خرید</p>
             </div>
           </div>
           <p className="">
@@ -132,7 +132,7 @@ export default function UserDashbord() {
             </p>
             <div>
               <p> پشتیبانی</p>
-              <p className="text-gray-400"> پیگیری درخواست‌ها</p>
+              <p className="text-text-title"> پیگیری درخواست‌ها</p>
             </div>
           </div>
           <p className="">

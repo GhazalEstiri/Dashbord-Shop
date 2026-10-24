@@ -154,7 +154,7 @@ function SideBar() {
               transition-colors duration-200 ${
                 isActive
                   ? "bg-foreground text-background font-bold"
-                  : "text-gray-300 hover:bg-white/5 hover:text-foreground"
+                  : "text- hover:bg-white/5 hover:text-foreground"
               }`}
               >
                 <Icon size={20} />
@@ -162,12 +162,15 @@ function SideBar() {
               </Link>
             );
           })}
+          <div className="">
+            <div className="flex flex-row items-center gap-5 mr-3">
+              <ModeToggle />
+              <p>تغییر تم</p>
+            </div>
+          </div>
         </nav>
         <div className="mt-auto border-t border-white/10 pt-4">
-          <p className="text-center text-xs text-gray-nothing">پنل ویترین</p>
-        </div>
-        <div>
-          <ModeToggle />
+          <p className="text-center text-xs text-text-title">پنل ویترین</p>
         </div>
       </div>
     </aside>

@@ -28,8 +28,8 @@ export default function LoginPage() {
     if (foundUser && foundUser.name === name) {
       dispatch(login(foundUser));
 
-      if (foundUser.role){
-        router.push("/dashbord")
+      if (foundUser.role) {
+        router.push("/dashbord");
       }
     } else {
       alert("کسی نیستتت");
@@ -44,7 +44,7 @@ export default function LoginPage() {
 
   return (
     <section className="h-screen flex items-center justify-center w-full">
-        <img src="bg.png" alt="" className="inset-0 relative h-screen w-full" />
+      <img src="bg.png" alt="" className="inset-0 relative h-screen w-full" />
       {/* <img src="bookLogin.jpg" alt="" className="inset-0 relative" /> */}
       <div className="w-fit flex items-center justify-center px-7 py-10 sm:px-12 lg:px-20 mx-auto  z-100 bg-[#fac02c72] shadow-2xl rounded-xl absolute right-30">
         {/* <div className="w-full max-w-[380px] mx-auto flex justify-center items-center"></div> */}
@@ -60,13 +60,13 @@ export default function LoginPage() {
               </p>
 
               <p className="text-sm text-[#33231F] mt-2">
-              با موفقیت وارد شدید.
+                با موفقیت وارد شدید.
               </p>
             </div>
 
             <button
               onClick={handleLogout}
-              className="w-full py-3 rounded-full bg-[#4C4531] text-white font-medium hover:bg-[#33231F] transition"
+              className="w-full py-3 rounded-full bg-[#4C4531] text-text-base font-medium hover:bg-[#33231F] transition"
             >
               Log out
             </button>
@@ -74,16 +74,18 @@ export default function LoginPage() {
         ) : (
           <div>
             <form onSubmit={handleSubmit} className="flex flex-col gap-10 ">
-                <h1 className="flex justify-center items-center font-bold text-3xl text-background">لطفا اطلاعات خود را وارد کنید.</h1>
+              <h1 className="flex justify-center items-center font-bold text-3xl text-[#29251a]">
+                لطفا اطلاعات خود را وارد کنید.
+              </h1>
               <div>
-                <label className="block text-lg font-medium text-background mb-2">
+                <label className="block text-lg font-bold  text-[#29251a] mb-2">
                   نام کاربری
                 </label>
 
                 <div className="relative">
                   <UserRound
                     size={17}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-background"
+                    className="absolute left-4 top-1/2 -translate-y-1/2  text-[#29251a]"
                   />
 
                   <input
@@ -91,19 +93,19 @@ export default function LoginPage() {
                     value={name}
                     placeholder="نام کاربری..."
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full text-background h-11 rounded-xl border border-[#dce5ec] bg-[#d9d6ce] pl-11 pr-4 text-sm outline-none focus:border-[#33231F] transition  placeholder:text-background"
+                    className="w-full  h-11 rounded-xl border border-[#dce5ec] bg-[#d9d6ce] pl-11 pr-4 text-sm outline-none focus:border-[#33231F] transition  placeholder:text-black focus: text-[#29251a]"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-lg font-bold text-background mb-2">
+                <label className="block text-lg font-bold  text-[#29251a] mb-2">
                   ایمیل
                 </label>
 
                 <div className="relative">
                   <Mail
                     size={17}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-background"
+                    className="absolute left-4 top-1/2 -translate-y-1/2  text-[#29251a]"
                   />
 
                   <input
@@ -111,7 +113,7 @@ export default function LoginPage() {
                     value={email}
                     placeholder="you@example.com"
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full h-11  text-background rounded-xl border border-[#dce5ec] bg-[#d9d6ce] pl-11 pr-4 text-sm outline-none focus:border-[#33231F] transition placeholder:text-background"
+                    className="w-full h-11  rounded-xl border border-[#dce5ec] bg-[#d9d6ce] pl-11 pr-4 text-sm outline-none focus:border-[#33231F] transition placeholder:text-black focus:text-[#29251a]"
                   />
                 </div>
               </div>
