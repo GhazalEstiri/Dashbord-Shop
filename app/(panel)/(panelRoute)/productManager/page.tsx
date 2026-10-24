@@ -13,7 +13,7 @@ export default function ProductManager() {
     dispatch(deleteProduct(id));
   }
   return (
-    <section className=" flex flex-col md:mr-70 gap-10 px-20">
+    <section className=" flex flex-col md:mr-70 gap-10 px-10 md:px-20">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
           <h1 className="text-foreground text-3xl font-bold">مدیریت محصولات</h1>
@@ -30,9 +30,9 @@ export default function ProductManager() {
           return (
             <div
               key={item.id}
-              className=" border-b border-white/10 bg-second-background p-5 flex flex-row justify-between items-center gap-5 "
+              className=" border-b border-white/10 bg-second-background p-5 flex flex-col md:flex-row justify-between items-center gap-5 "
             >
-              <div className="flex flex-row items-center gap-10">
+              <div className="flex flex-col md:flex-row items-center gap-10 text-center md:text-start">
                 <p className="bg-[#29251A] rounded-full p-3 text-foreground">
                   <ShoppingBag />
                 </p>

@@ -113,7 +113,7 @@ const status = [
   { role: "vendor", title: "پنل فروشنده" },
 ];
 function SideBar() {
-  // const [openHambergur, setopenHambergur] = useState(false);
+  const [openHambergur, setopenHambergur] = useState(false);
 
   const pathname = usePathname();
   const roleUser = useSelector((state: Rootstate) => state.auth.user?.role);
@@ -122,9 +122,9 @@ function SideBar() {
   }
   const menuItems = menuItemRole[roleUser];
   const statusRole = status.find((item) => item.role === roleUser);
-  // function toggleHambergur() {
-  //   setopenHambergur(!openHambergur);
-  // }
+  function toggleHambergur() {
+    setopenHambergur(!openHambergur);
+  }
 
   return (
     <section>
@@ -184,7 +184,7 @@ function SideBar() {
         </div>
       </aside>
 
-      {/* <button
+      <button
         onClick={toggleHambergur}
         className=" right-4 top-4 z-60 md:hidden border border-foreground rounded-full p-2 flex -mb-5 mr-5 mt-2 text-foreground "
       >
@@ -249,7 +249,7 @@ function SideBar() {
             <p className="text-center text-xs text-text-title">پنل ویترین</p>
           </div>
         </div>
-      </aside> */}
+      </aside>
     </section>
   );
 }

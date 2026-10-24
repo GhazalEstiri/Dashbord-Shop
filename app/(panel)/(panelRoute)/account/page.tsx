@@ -18,9 +18,9 @@ export default function Account() {
           
         </p> */}
       </header>
-      <div>
+      <div className="flex flex-col mb-10">
         {user && (
-          <div className=" flex flex-col gap-5">
+          <div className=" flex flex-col gap-5 ">
             <div className=" flex flex-col md:flex-row gap-5">
               <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-full md:w-1/2 flex flex-col md:flex-row  items-center gap-5">
                 <p className="bg-[#29251A] rounded-full p-3 text-foreground">

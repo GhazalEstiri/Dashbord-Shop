@@ -43,14 +43,14 @@ export default function UserDashbord() {
           <p>محصول ذخیره شده</p>
         </div>
       </div>
-      <div className="rounded-2xl flex-col border border-white/10 bg-second-background flex p-5 mx-10 justify-between mt-5 gap-5 ">
+      <div className="rounded-2xl flex-col border border-white/10 bg-second-background flex py-5 mx-10 justify-between mt-5 gap-5 ">
         <div className="flex justify-between w-full flex-row px-10">
           <p>آخرین سفارش</p>
           <p className="text-foreground">مشاهده همه </p>
         </div>
         <div className=" flex justify-between items-center px-10 w-full ">
           <div className="flex flex-row items-center gap-3   w-full">
-            <p className="bg-[#272B31] rounded-full text-foreground p-3 flex mb-15">
+            <p className="bg-[#272B31] hidden  rounded-full text-foreground p-3 md:flex mb-15">
               <Package size={40} />
             </p>
             <div className="flex flex-col gap-2 w-full">
