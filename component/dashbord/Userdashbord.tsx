@@ -18,15 +18,15 @@ export default function UserDashbord() {
           </p>
           <div>
             <p>شقایق مقیمی</p>
-            <p>عضو ویترین از مهر ۱۴۰۰</p>
+            {/* <p>عضو ویترین از مهر ۱۴۰۰</p> */}
           </div>
         </div>
         <p className="text-green-ok bg-[#2780522f] p-2 rounded-2xl">
           حساب فعال
         </p>
       </div>
-      <div className="flex flex-row w-full mt-10 gap-5 px-10">
-        <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-1/2 text-text-title flex flex-col gap-3">
+      <div className="flex flex-col md:flex-row w-full mt-10 gap-5 px-10">
+        <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-full md:w-1/2 text-text-title flex flex-col gap-3">
           <p className="text-foreground text-2xl">
             <Handbag />
           </p>
@@ -34,7 +34,7 @@ export default function UserDashbord() {
           <p className="text-text-base font-bold text-3xl">۲۵</p>
           <p>مجموع سفارش ها</p>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-1/2  text-text-title flex flex-col gap-3">
+        <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-full md:w-1/2  text-text-title flex flex-col gap-3">
           <p className="text-foreground text-2xl">
             <Heart />
           </p>

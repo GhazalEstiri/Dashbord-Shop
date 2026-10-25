@@ -9,6 +9,12 @@ type User = {
   name: string;
   status: StatuUser;
   role: Role;
+  adress: {
+    name: string;
+    Path: string;
+    phoneNumber: number;
+    postcode: number;
+  };
   // password: string;
 };
 type AuthState = {
@@ -29,11 +35,11 @@ export const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
     },
-    localUser:(state,action :PayloadAction<User>)=>{
-      state.user=action.payload
-    }
+    localUser: (state, action: PayloadAction<User>) => {
+      state.user = action.payload;
+    },
   },
 });
 
-export const { login, logout,localUser } = authSlice.actions;
+export const { login, logout, localUser } = authSlice.actions;
 export const authReducer = authSlice.reducer;
