@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, Rootstate } from "@/lib/store";
 import { House, Phone, Milestone, Star } from "lucide-react";
 import React, { useState } from "react";
-import { Rootstate } from "@/lib/store";
 import { addad } from "@/faeture/product/productSlice";
 import { it } from "node:test";
 export default function Adress() {
@@ -91,7 +90,7 @@ export default function Adress() {
         </p>
       </div>
       {adresses.length > 0 ? (
-        <div className="rounded-2xl relative border border-white/10 bg-second-background p-5 w-full flex flex-col items-start gap-5">
+        <div className="rounded-2xl relative border border-white/10 bg-second-background p-5 w-full flex flex-col items-start gap-5 mb-10">
           {adresses.map((item) => {
             return (
               <div className=" flex flex-row gap-5 " key={item.id}>
