@@ -33,8 +33,8 @@ export default function ProductManager() {
               className=" border-b border-white/10 bg-second-background p-5 flex flex-col md:flex-row justify-between items-center gap-5 "
             >
               <div className="flex flex-col md:flex-row items-center gap-10 text-center md:text-start">
-                <p className="bg-[#29251A] rounded-full p-3 text-foreground">
-                  <ShoppingBag />
+                <p className="">
+                 <img src={item.image} alt="" className="w-15 h-15 rounded-full " />
                 </p>
                 <div className="flex flex-col gap-4">
                   <p className="font-bold text-lg">{item.title}</p>

@@ -13,6 +13,7 @@ export default function Product() {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [status, setStatus] = useState<"موجود" | "ناموجود">("موجود");
+  const [image, setImage] = useState("");
   function handleAdd(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (title === "" || price === "") {
@@ -24,11 +25,13 @@ export default function Product() {
         title: title,
         price: Number(price),
         status,
+        image,
       }),
     );
     setPrice("");
     setTitle("");
     setStatus("موجود");
+    setImage("");
     (document.getElementById("my_modal_1") as HTMLDialogElement)?.close();
   }
 
@@ -57,8 +60,12 @@ export default function Product() {
               className=" border-b border-white/10 bg-second-background p-5 flex flex-col md:flex-row justify-between items-center gap-5 "
             >
               <div className="flex flex-col text-center md:text-start md:flex-row items-center gap-10">
-                <p className="bg-[#29251A] rounded-full p-3 text-foreground">
-                  <ShoppingBag />
+                <p className="">
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="w-15 h-15 rounded-full "
+                  />
                 </p>
                 <div className="flex flex-col gap-4">
                   <p className="font-bold text-lg">{item.title}</p>
@@ -96,6 +103,37 @@ export default function Product() {
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box bg-second-background">
           <form action="" onSubmit={handleAdd} className=" flex flex-col gap-5">
+            <div className="flex flex-col gap-3">
+              <p className="text-foreground">تصویر محصول:</p>
+
+              <input
+                type="file"
+                accept="image/png, image/jpeg, image/webp"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+
+                  if (!file) return;
+
+                  const reader = new FileReader();
+
+                  reader.onload = () => {
+                    setImage(reader.result as string);
+                  };
+
+                  reader.readAsDataURL(file);
+                }}
+                className="file-input w-full bg-background text-text-title"
+              />
+
+              {image && (
+                <img
+                  src={image}
+                  alt="پیش‌نمایش محصول"
+                  className="w-24 h-24 object-cover rounded-xl border border-white/10"
+                />
+              )}
+            </div>
+
             <p className="text-foreground">نام محصول:</p>
             <input
               type="text"
@@ -134,13 +172,18 @@ export default function Product() {
                 </option>
               </select>
             </div>
-            <button type="submit" className="btn bg-foreground text-background border-none">
+            <button
+              type="submit"
+              className="btn bg-foreground text-background border-none"
+            >
               ثبت محصول
             </button>
           </form>
           <div className="modal-action">
             <form method="dialog">
-              <button className="btn bg-background text-foreground border-none">بستن</button>
+              <button className="btn bg-background text-foreground border-none">
+                بستن
+              </button>
             </form>
           </div>
         </div>
