@@ -107,5 +107,43 @@
       "approved": "Approved",
       "cancelled": "Cancelled"
     }
+  },
+  "Account": {
+    "title": "Account",
+    "description": "View your account information and access level.",
+    "username": "Username",
+    "email": "Email",
+    "userStatus": "User Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "roleAccess": "Role and Access Level",
+    "roles": {
+      "admin": "Admin",
+      "vendor": "Vendor",
+      "user": "User"
+    }
+  },
+  "Adress": {
+    "title": "User Addresses",
+    "description": "Enter your address information here.",
+    "addNewAddress": "Add New Address",
+    "addAddressDescription": "Click the button below to add a new address.",
+    "addAddress": "Add Address",
+    "postalAddress": "Postal Code:",
+    "phoneNumber": "Phone Number:",
+    "defaultAddress": "Default Address",
+    "emptyAddresses": "You haven't added any new addresses yet.",
+    "form": {
+      "addressName": "Address Name:",
+      "addressNamePlaceholder": "Enter an address name.",
+      "address": "Address:",
+      "addressPlaceholder": "Enter your address.",
+      "postCode": "Postal Code:",
+      "postCodePlaceholder": "Enter your postal code.",
+      "phoneNumber": "Phone Number:",
+      "phoneNumberPlaceholder": "Enter your phone number.",
+      "submit": "Save Address",
+      "close": "Close"
+    }
   }
 }

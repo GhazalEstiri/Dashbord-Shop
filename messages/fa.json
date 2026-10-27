@@ -107,5 +107,41 @@
       "approved": "تأیید شده",
       "cancelled": "لغو شده"
     }
+  },"Account": {
+  "title": "حساب کاربری",
+  "description": "اطلاعات حساب و سطح دسترسی خود را مشاهده کنید.",
+  "username": "نام کاربری",
+  "email": "ایمیل",
+  "userStatus": "وضعیت کاربر",
+  "active": "فعال",
+  "inactive": "غیرفعال",
+  "roleAccess": "نقش و سطح دسترسی",
+  "roles": {
+    "admin": "ادمین",
+    "vendor": "فروشنده",
+    "user": "کاربر"
   }
+},"Adress": {
+  "title": "آدرس کاربر",
+  "description": "اطلاعات مربوط به آدرس خود را اینجا وارد کنید.",
+  "addNewAddress": "افزودن آدرس جدید",
+  "addAddressDescription": "برای ثبت آدرس جدید روی دکمه زیر کلیک کنید.",
+  "addAddress": "افزودن آدرس",
+  "postalAddress": "آدرس پستی:",
+  "phoneNumber": "شماره تلفن:",
+  "defaultAddress": "آدرس پیش‌فرض",
+  "emptyAddresses": "هنوز آدرس جدیدی ثبت نکرده‌اید.",
+  "form": {
+    "addressName": "نام آدرس:",
+    "addressNamePlaceholder": "نام آدرس را وارد کنید.",
+    "address": "آدرس:",
+    "addressPlaceholder": "آدرس خود را وارد کنید.",
+    "postCode": "کد پستی:",
+    "postCodePlaceholder": "کد پستی را وارد کنید.",
+    "phoneNumber": "شماره تلفن:",
+    "phoneNumberPlaceholder": "شماره تلفن را وارد کنید.",
+    "submit": "ثبت آدرس",
+    "close": "بستن"
+  }
+}
 }
