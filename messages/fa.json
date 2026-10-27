@@ -1,0 +1,111 @@
+{
+  "SalesChart": {
+    "title": "آمار فروش محصولات",
+    "months": {
+      "farvardin": "فروردین",
+      "ordibehesht": "اردیبهشت",
+      "khordad": "خرداد",
+      "tir": "تیر",
+      "mordad": "مرداد",
+      "shahrivar": "شهریور",
+      "mehr": "مهر"
+    },
+    "sales": "فروش",
+    "million": "میلیون"
+  },
+  "AdminDashboard": {
+    "title": "داشبورد مدیریت",
+    "welcome": "به پنل مدیریت فروشگاه ویترین خوش آمدید.",
+    "totalSale": "فروش کل",
+    "ValuetotalSale": "۱۲۵ میلیون تومان",
+    "totalSaleDescription": "مجموع فروش فروشگاه",
+    "totalOrders": "کل سفارش‌ها",
+    "totalOrdersValue": "۸۴۲",
+    "totalOrdersDescription": "سفارش‌های ثبت‌شده",
+    "users": "کاربران",
+    "usersValue": "۳۲۰",
+    "usersDescription": "کاربران ثبت‌شده",
+    "vendors": "فروشندگان",
+    "vendorsValue": "۲۴",
+    "vendorsDescription": "فروشندگان فعال"
+  },
+  "sidebar": {
+    "account": "اطلاعات حساب کاربری",
+    "adminpanel": "پنل مدیریت",
+    "adress": "آدرس ها",
+    "comments": "دیدگاه و پرسش ها",
+    "dashbord": "داشبورد",
+    "exitAccount": "خروج از حساب کاربری ",
+    "favorites": "علاقه مندی ها ",
+    "orderManager": "مدیریت سفارش ها",
+    "orders": "سفارش ها",
+    "productManager": "مدیریت محصولات",
+    "products": "محصولات",
+    "reports": "آمار و گزارش‌ها",
+    "reportVendor": "آمار فروشندگان",
+    "themeChange": "تغییر تم",
+    "userManager": "مدیریت کاربران",
+    "userpanel": "پنل کاربر",
+    "vendorManager": "مدیریت فروشگاه",
+    "vendorpanel": "پنل فروشنده",
+    "vitrin": " ویترین"
+  },
+  "UserDashbord": {
+    "userName": "شقایق مقیمی",
+    "accountActive": "حساب فعال",
+    "myOrders": "سفارش‌های من",
+    "ordersCount": "۲۵",
+    "totalOrders": "مجموع سفارش‌ها",
+    "favorites": "علاقه‌مندی‌ها",
+    "favoritesCount": "۵",
+    "savedProducts": "محصول ذخیره‌شده",
+    "latestOrder": "آخرین سفارش",
+    "viewAll": "مشاهده همه",
+    "orderNumber": "سفارش شماره ۲۰۵۱",
+    "orderProducts": "۳ محصول : ۲,۴۵۰,۰۰۰ تومان",
+    "shipping": "در حال ارسال",
+    "orderSteps": {
+      "registered": "ثبت سفارش",
+      "shipped": "ارسال",
+      "delivered": "تحویل"
+    },
+    "quickAccess": "دسترسی سریع",
+    "personalInfo": "اطلاعات شخصی",
+    "personalInfoDescription": "نام، ایمیل و شماره تماس",
+    "myAddresses": "آدرس‌های من",
+    "myAddressesDescription": "مدیریت آدرس‌های ارسال",
+    "payments": "پرداخت‌ها",
+    "paymentsDescription": "سوابق پرداخت و خرید",
+    "support": "پشتیبانی",
+    "supportDescription": "پیگیری درخواست‌ها"
+  },
+
+  "VendorDashboard": {
+    "title": "داشبورد فروشنده",
+    "welcome": "به پنل فروشنده در فروشگاه ویترین خوش آمدید.",
+    "monthlySales": "فروش این ماه",
+    "monthlySalesValue": "۲۵ میلیون تومان",
+    "monthlySalesDescription": "مجموع فروش فروشگاه",
+    "orders": "سفارش‌ها",
+    "ordersValue": "۱۲۵",
+    "ordersDescription": "سفارش‌های ثبت‌شده",
+    "activeProducts": "محصولات فعال",
+    "activeProductsValue": "۲۰",
+    "activeProductsDescription": "در فروشگاه",
+    "pendingOrders": "سفارش در انتظار",
+    "pendingOrdersValue": "۲۴",
+    "pendingOrdersDescription": "نیاز به پیگیری",
+    "latestOrders": "آخرین سفارش‌ها",
+    "viewAll": "مشاهده همه",
+    "products": {
+      "concealer": "کانسیلر",
+      "pinkBlush": "رژگونه صورتی",
+      "highlighter": "هایلایتر"
+    },
+    "orderStatus": {
+      "pending": "در انتظار",
+      "approved": "تأیید شده",
+      "cancelled": "لغو شده"
+    }
+  }
+}

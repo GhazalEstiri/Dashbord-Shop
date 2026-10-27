@@ -8,7 +8,9 @@ import {
   CreditCard,
   Headset,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 export default function UserDashbord() {
+  const t = useTranslations("UserDashbord");
   return (
     <section className="md:mr-80 mt-10">
       <div className=" flex justify-between items-center px-10">
@@ -17,12 +19,12 @@ export default function UserDashbord() {
             <UserRound size={40} />
           </p>
           <div>
-            <p>شقایق مقیمی</p>
+            <p>{t("userName")}</p>
             {/* <p>عضو ویترین از مهر ۱۴۰۰</p> */}
           </div>
         </div>
         <p className="text-green-ok bg-[#2780522f] p-2 rounded-2xl">
-          حساب فعال
+          {t("accountActive")}
         </p>
       </div>
       <div className="flex flex-col md:flex-row w-full mt-10 gap-5 px-10">
@@ -30,23 +32,27 @@ export default function UserDashbord() {
           <p className="text-foreground text-2xl">
             <Handbag />
           </p>
-          <p>سفارش های من</p>
-          <p className="text-text-base font-bold text-3xl">۲۵</p>
-          <p>مجموع سفارش ها</p>
+          <p>{t("myOrders")}</p>
+          <p className="text-text-base font-bold text-3xl">
+            {t("ordersCount")}
+          </p>
+          <p>{t("totalOrders")}</p>
         </div>
         <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-full md:w-1/2  text-text-title flex flex-col gap-3">
           <p className="text-foreground text-2xl">
             <Heart />
           </p>
-          <p>علاقه مندی ها</p>
-          <p className="text-text-base font-bold text-3xl">۵</p>
-          <p>محصول ذخیره شده</p>
+          <p>{t("favorites")}</p>
+          <p className="text-text-base font-bold text-3xl">
+            {t("favoritesCount")}
+          </p>
+          <p>{t("savedProducts")}</p>
         </div>
       </div>
       <div className="rounded-2xl flex-col border border-white/10 bg-second-background flex py-5 mx-10 justify-between mt-5 gap-5 ">
         <div className="flex justify-between w-full flex-row px-10">
-          <p>آخرین سفارش</p>
-          <p className="text-foreground">مشاهده همه </p>
+          <p> {t("latestOrder")}</p>
+          <p className="text-foreground">{t("viewAll")}</p>
         </div>
         <div className=" flex justify-between items-center px-10 w-full ">
           <div className="flex flex-row items-center gap-3   w-full">
@@ -54,9 +60,9 @@ export default function UserDashbord() {
               <Package size={40} />
             </p>
             <div className="flex flex-col gap-2 w-full">
-              <p>سفارش شماره ۲۰۵۱</p>
-              <p>۳ محصول : ۲,۴۵۰,۰۰۰ تومان</p>
-              <p className="text-foreground">در حال ارسال</p>
+              <p>{t("orderNumber")}</p>
+              <p>{t("orderProducts")}</p>
+              <p className="text-foreground">{t("shipping")}</p>
               <progress
                 className="progress  [&::-webkit-progress-bar]:bg-[#272B31]
                 [&::-webkit-progress-value]:bg-[#FABE2C]
@@ -65,9 +71,9 @@ export default function UserDashbord() {
                 max="100"
               ></progress>
               <div className="flex justify-between text-text-title">
-                <p>ثبت سفارش</p>
-                <p>ارسال</p>
-                <p>تحویل</p>
+                <p>{t("orderSteps.registered")}</p>
+                <p>{t("orderSteps.shipped")}</p>
+                <p>{t("orderSteps.delivered")}</p>
               </div>
             </div>
           </div>
@@ -78,7 +84,7 @@ export default function UserDashbord() {
       </div>
       <div className="rounded-2xl flex-col border border-white/10 bg-second-background flex p-5 mx-10 mt-5 gap-10">
         <div className="w-full flex flex-row justify-between ">
-          <p className="text-xl">دسترسی سریع</p>
+          <p className="text-xl">{t("quickAccess")}</p>
           <p>
             <ChevronLeft />
           </p>
@@ -89,8 +95,9 @@ export default function UserDashbord() {
               <UserRound />
             </p>
             <div>
-              <p>اطلاعات شخصی</p>
-              <p className="text-text-title">نام، ایمیل و شماره تماس</p>
+              <p>{t("personalInfo")}</p>
+
+              <p className="text-text-title">{t("personalInfoDescription")}</p>
             </div>
           </div>
           <p className="">
@@ -103,8 +110,8 @@ export default function UserDashbord() {
               <MapPin />
             </p>
             <div>
-              <p> آدرس‌های من</p>
-              <p className="text-text-title">مدیریت آدرس‌های ارسال</p>
+              <p>{t("myAddresses")}</p>
+              <p className="text-text-title">{t("myAddressesDescription")}</p>
             </div>
           </div>
           <p className="">
@@ -117,8 +124,8 @@ export default function UserDashbord() {
               <CreditCard />
             </p>
             <div>
-              <p> پرداخت‌ها</p>
-              <p className="text-text-title"> سوابق پرداخت و خرید</p>
+              <p>{t("payments")}</p>
+              <p className="text-text-title">{t("paymentsDescription")}</p>
             </div>
           </div>
           <p className="">
@@ -131,8 +138,8 @@ export default function UserDashbord() {
               <Headset />
             </p>
             <div>
-              <p> پشتیبانی</p>
-              <p className="text-text-title"> پیگیری درخواست‌ها</p>
+              <p>{t("support")}</p>
+              <p className="text-text-title"> {t("supportDescription")} </p>
             </div>
           </div>
           <p className="">

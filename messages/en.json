@@ -1,0 +1,111 @@
+{
+  "SalesChart": {
+    "title": "Product Sales Statistics",
+    "months": {
+      "farvardin": "Farvardin",
+      "ordibehesht": "Ordibehesht",
+      "khordad": "Khordad",
+      "tir": "Tir",
+      "mordad": "Mordad",
+      "shahrivar": "Shahrivar",
+      "mehr": "Mehr"
+    },
+    "sales": "Sales",
+    "million": "million"
+  },
+
+  "AdminDashboard": {
+    "title": "Admin Dashboard",
+    "welcome": "Welcome to the Vitrin store admin panel.",
+    "totalSale": "Total Sales",
+    "ValuetotalSale": "125 million tomans",
+    "totalSaleDescription": "Total store sales",
+    "totalOrders": "Total Orders",
+    "totalOrdersValue": "842",
+    "totalOrdersDescription": "Registered orders",
+    "users": "Users",
+    "usersValue": "320",
+    "usersDescription": "Registered users",
+    "vendors": "Vendors",
+    "vendorsValue": "24",
+    "vendorsDescription": "Active vendors"
+  },
+  "sidebar": {
+    "account": "Account information",
+    "adminpanel": "Admin Panel",
+    "adress": "Addresses",
+    "comments": "Comments and Questions",
+    "dashbord": "Dashboard",
+    "exitAccount": "Log out",
+    "favorites": "Favorites",
+    "orderManager": "Order Management",
+    "orders": "Orders",
+    "productManager": "Product Management",
+    "products": "Products",
+    "reports": "Statistics and Reports",
+    "reportVendor": "Seller statistics",
+    "themeChange": "Change theme",
+    "userManager": "User Management",
+    "userpanel": "User Panel",
+    "vendorManager": "Store Management",
+    "vendorpanel": "Seller Dashboard",
+    "vitrin": "Showcase"
+  },
+  "UserDashbord": {
+    "userName": "Shaghayegh Moghim",
+    "accountActive": "Active Account",
+    "myOrders": "My Orders",
+    "ordersCount": "25",
+    "totalOrders": "Total Orders",
+    "favorites": "Favorites",
+    "favoritesCount": "5",
+    "savedProducts": "Saved Products",
+    "latestOrder": "Latest Order",
+    "viewAll": "View All",
+    "orderNumber": "Order #2051",
+    "orderProducts": "3 Products: 2,450,000 Tomans",
+    "shipping": "Shipping in Progress",
+    "orderSteps": {
+      "registered": "Order Placed",
+      "shipped": "Shipped",
+      "delivered": "Delivered"
+    },
+    "quickAccess": "Quick Access",
+    "personalInfo": "Personal Information",
+    "personalInfoDescription": "Name, email, and phone number",
+    "myAddresses": "My Addresses",
+    "myAddressesDescription": "Manage shipping addresses",
+    "payments": "Payments",
+    "paymentsDescription": "Payment and purchase history",
+    "support": "Support",
+    "supportDescription": "Track support requests"
+  },
+  "VendorDashboard": {
+    "title": "Vendor Dashboard",
+    "welcome": "Welcome to the Vitrin store vendor panel.",
+    "monthlySales": "Monthly Sales",
+    "monthlySalesValue": "25 Million Tomans",
+    "monthlySalesDescription": "Total store sales",
+    "orders": "Orders",
+    "ordersValue": "125",
+    "ordersDescription": "Registered orders",
+    "activeProducts": "Active Products",
+    "activeProductsValue": "20",
+    "activeProductsDescription": "In the store",
+    "pendingOrders": "Pending Orders",
+    "pendingOrdersValue": "24",
+    "pendingOrdersDescription": "Require follow-up",
+    "latestOrders": "Latest Orders",
+    "viewAll": "View All",
+    "products": {
+      "concealer": "Concealer",
+      "pinkBlush": "Pink Blush",
+      "highlighter": "Highlighter"
+    },
+    "orderStatus": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "cancelled": "Cancelled"
+    }
+  }
+}

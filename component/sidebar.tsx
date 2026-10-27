@@ -21,98 +21,90 @@ import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import type { Rootstate } from "@/lib/store";
 import { useState } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 type Role = "admin" | "user" | "vendor";
-
-// const menuItems = [
-//   { title: "داشبورد", href: "/", icon: House },
-//   { title: "محصولات", href: "/product", icon: LayoutList },
-//   { title: "سبد خرید", href: "/order", icon: ShoppingCartMinus },
-//   { title: "مشتریان", href: "/customer", icon: UserGroup },
-//   { title: "فروشندگان", href: "/vendor", icon: Store },
-//   { title: "گزارش‌ها", href: "/report", icon: MessageSquareWarning },
-//   { title: "علاقه مندی ها ", href: "/favorite", icon: Bookmark },
-//   { title: "اطلاعات حساب کاربری", href: "/account", icon: IdCard },
-// ];
 const menuItemRole = {
   user: [
-    { title: "داشبورد", href: "/", icon: House },
-    { title: "آدرس ها", href: "/adress", icon: MapPinHouse },
+    { title: "dashbord", href: "/", icon: House },
+    { title: "adress", href: "/adress", icon: MapPinHouse },
     {
-      title: "دیدگاه و پرسش ها ",
+      title: "comments",
       href: "/comment",
       icon: MessageCircle,
     },
     {
-      title: "سفارش ها ",
+      title: "orders",
       href: "/orderstatus",
       icon: ShoppingCartMinus,
     },
-    { title: "علاقه مندی ها ", href: "/favorite", icon: Bookmark },
+    { title: "favorites", href: "/favorite", icon: Bookmark },
     {
-      title: "اطلاعات حساب کاربری",
+      title: "account",
       href: "/account",
       icon: IdCard,
     },
-    { title: "خروج از حساب کاربری ", href: "/login", icon: LogOut },
+    { title: "exitAccount", href: "/login", icon: LogOut },
   ],
   vendor: [
-    { title: "داشبورد", href: "/", icon: House },
-    { title: "محصولات", href: "/product", icon: LayoutList },
+    { title: "dashbord", href: "/", icon: House },
+    { title: "products", href: "/product", icon: LayoutList },
 
     {
-      title: "آمار و گزارش‌ها",
+      title: "reports",
       href: "/report",
       icon: MessageSquareWarning,
     },
     {
-      title: "مدیریت سفارش ها",
+      title: "orderManager",
       href: "/orderManager",
       icon: ShoppingCartMinus,
     },
 
     {
-      title: "اطلاعات حساب کاربری",
+      title: "account",
       href: "/account",
       icon: IdCard,
     },
-    { title: "خروج از حساب کاربری ", href: "/login", icon: LogOut },
+    { title: "exitAccount", href: "/login", icon: LogOut },
   ],
   admin: [
-    { title: "داشبورد", href: "/", icon: House },
+    { title: "dashbord", href: "/", icon: House },
     {
-      title: "مدیریت محصولات",
+      title: "productManager",
       href: "/productManager",
       icon: LayoutList,
     },
     {
-      title: "مدیریت فروشگاه",
+      title: "vendorManager",
       href: "/vendorManager",
       icon: Store,
     },
     {
-      title: "مدیریت کاربران",
+      title: "userManager",
       href: "/userManager",
       icon: UserGroup,
     },
     {
-      title: "آمار فروشندگان",
+      title: "reportVendor",
       href: "/reportVendor",
       icon: MessageSquareWarning,
     },
     {
-      title: "اطلاعات حساب کاربری",
+      title: "account",
       href: "/account",
       icon: IdCard,
     },
-    { title: "خروج از حساب کاربری ", href: "/login", icon: LogOut },
+    { title: "exitAccount", href: "/login", icon: LogOut },
   ],
 };
 const status = [
-  { role: "admin", title: "پنل مدیریت" },
-  { role: "user", title: "پنل کاربر" },
-  { role: "vendor", title: "پنل فروشنده" },
+  { role: "admin", title: "adminpanel" },
+  { role: "user", title: "userpanel" },
+  { role: "vendor", title: "vendorpanel" },
 ];
 function SideBar() {
+const t = useTranslations("sidebar")
   const [openHambergur, setopenHambergur] = useState(false);
 
   const pathname = usePathname();
@@ -139,12 +131,12 @@ function SideBar() {
             className="flex flex-row items-center text-foreground text-6xl justify-center gap-5 font-kamran"
           >
             <ShoppingCart size={50} className="flex mt-5" />
-            ویترین
+           {t("vitrin")}
           </Link>
         </div>
         {statusRole && (
           <p className="flex justify-center items-center mx-auto text-foreground mt-10">
-            {statusRole.title}
+            {t(statusRole.title)}
           </p>
         )}
 
@@ -167,19 +159,20 @@ function SideBar() {
               }`}
                 >
                   <Icon size={20} />
-                  <span>{title}</span>
+                  <span>{t(title)}</span>
                 </Link>
               );
             })}
             <div className="">
               <div className="flex flex-row items-center gap-5 mr-3">
                 <ModeToggle />
-                <p>تغییر تم</p>
+                <p>{t("themeChange")}</p>
               </div>
             </div>
           </nav>
           <div className="mt-auto border-t border-white/10 pt-4">
             <p className="text-center text-xs text-text-title">پنل ویترین</p>
+             <LanguageSwitcher />
           </div>
         </div>
       </aside>
@@ -206,12 +199,12 @@ function SideBar() {
             className="flex flex-row items-center text-foreground text-6xl justify-center gap-5 font-kamran"
           >
             <ShoppingCart size={50} className="flex mt-5" />
-            ویترین
+            {t("vitrin")}
           </Link>
         </div>
         {statusRole && (
           <p className="flex justify-center items-center mx-auto text-foreground mt-10">
-            {statusRole.title}
+            {t(statusRole.title)}
           </p>
         )}
 
@@ -241,12 +234,13 @@ function SideBar() {
             <div className="">
               <div className="flex flex-row items-center gap-5 mr-3">
                 <ModeToggle />
-                <p>تغییر تم</p>
+                <p>{t("themeChange")}</p>
               </div>
             </div>
           </nav>
           <div className="mt-auto border-t border-white/10 pt-4">
             <p className="text-center text-xs text-text-title">پنل ویترین</p>
+            <LanguageSwitcher />
           </div>
         </div>
       </aside>

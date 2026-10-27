@@ -8,6 +8,7 @@ import { mockUser } from "@/lib/data/user";
 // import Navbar from "../src/navbar";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, Rootstate } from "@/lib/store";
+
 type Role = "admin" | "user" | "vendor";
 type User = {
   id: number;

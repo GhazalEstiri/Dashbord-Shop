@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import {
   ResponsiveContainer,
   LineChart,
@@ -10,22 +11,24 @@ import {
   Tooltip,
 } from "recharts";
 
-const salesData = [
-  { month: "فروردین", sales: 35 },
-  { month: "اردیبهشت", sales: 48 },
-  { month: "خرداد", sales: 40 },
-  { month: "تیر", sales: 65 },
-  { month: "مرداد", sales: 55 },
-  { month: "شهریور", sales: 80 },
-  { month: "مهر", sales: 72 },
-];
 
 export default function SalesChart() {
+  const t = useTranslations("SalesChart")
+
+   const salesData = [
+    { month: t("months.farvardin"), sales: 35 },
+    { month: t("months.ordibehesht"), sales: 48 },
+    { month: t("months.khordad"), sales: 40 },
+    { month: t("months.tir"), sales: 65 },
+    { month: t("months.mordad"), sales: 55 },
+    { month: t("months.shahrivar"), sales: 80 },
+    { month: t("months.mehr"), sales: 72 },
+  ];
   return (
     <>
       <div className="h-90 max-w-300 lg:mr-80 md:mr-85 mb-20 flex justify-center flex-col items-center  mr-10">
         <h1 className="text-foreground flex items-center justify-center text-center">
-          آمار فروش محصولات
+       {t("title")}
         </h1>
         <ResponsiveContainer height="100%" width="100%">
           <LineChart
