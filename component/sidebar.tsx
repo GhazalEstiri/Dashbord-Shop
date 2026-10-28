@@ -22,7 +22,7 @@ import { useSelector } from "react-redux";
 import type { Rootstate } from "@/lib/store";
 import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 type Role = "admin" | "user" | "vendor";
 const menuItemRole = {
   user: [
@@ -55,11 +55,11 @@ const menuItemRole = {
       href: "/report",
       icon: MessageSquareWarning,
     },
-    {
-      title: "orderManager",
-      href: "/orderManager",
-      icon: ShoppingCartMinus,
-    },
+    // {
+    //   title: "orderManager",
+    //   href: "/orderManager",
+    //   icon: ShoppingCartMinus,
+    // },
 
     {
       title: "account",
@@ -104,9 +104,9 @@ const status = [
   { role: "vendor", title: "vendorpanel" },
 ];
 function SideBar() {
-const t = useTranslations("sidebar")
+  const t = useTranslations("sidebar");
   const [openHambergur, setopenHambergur] = useState(false);
-
+  const locale = useLocale();
   const pathname = usePathname();
   const roleUser = useSelector((state: Rootstate) => state.auth.user?.role);
   if (!roleUser) {
@@ -121,9 +121,10 @@ const t = useTranslations("sidebar")
   return (
     <section>
       <aside
-        dir="rtl"
-        className="fixed right-0 top-0 hidden md:flex h-screen w-72 flex-col
-      overflow-y-auto border-l border-white/10 bg-second-background p-5"
+        dir={locale === "fa" ? "rtl" : "ltr"}
+        className={`fixed top-0 hidden md:flex h-screen w-72 flex-col
+  overflow-y-auto border-white/10 bg-second-background p-5
+  ${locale === "fa" ? "right-0 border-l" : "left-0 border-r"}`}
       >
         <div>
           <Link
@@ -131,7 +132,7 @@ const t = useTranslations("sidebar")
             className="flex flex-row items-center text-foreground text-6xl justify-center gap-5 font-kamran"
           >
             <ShoppingCart size={50} className="flex mt-5" />
-           {t("vitrin")}
+            {t("vitrin")}
           </Link>
         </div>
         {statusRole && (
@@ -172,7 +173,7 @@ const t = useTranslations("sidebar")
           </nav>
           <div className="mt-auto border-t border-white/10 pt-4">
             <p className="text-center text-xs text-text-title">پنل ویترین</p>
-             <LanguageSwitcher />
+            <LanguageSwitcher />
           </div>
         </div>
       </aside>
@@ -185,10 +186,15 @@ const t = useTranslations("sidebar")
       </button>
 
       <aside
-        dir="rtl"
-        className={`fixed right-0 top-0 z-10 flex md:hidden h-screen w-72 flex-col
-             transition-transform duration-500 ease-in-out
-      overflow-y-auto border-l border-white/10 bg-second-background p-5 ${openHambergur ? "translate-x-0" : "translate-x-full"}`}
+        dir={locale === "fa" ? "rtl" : "ltr"}
+        className={`fixed top-0 z-50 flex md:hidden h-screen w-72 flex-col
+  transition-transform duration-500 ease-in-out
+  overflow-y-auto border-white/10 bg-second-background p-5
+  ${
+    locale === "fa"
+      ? `right-0 border-l ${openHambergur ? "translate-x-0" : "translate-x-full"}`
+      : `left-0 border-r ${openHambergur ? "translate-x-0" : "-translate-x-full"}`
+  }`}
       >
         <button onClick={toggleHambergur} className="flex justify-end text-xl">
           <CircleX />

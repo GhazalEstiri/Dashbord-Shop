@@ -44,8 +44,7 @@ export default async function RootLayout({
   setRequestLocale(locale);
   return (
     <html
-      lang="fa"
-      dir="rtl"
+      dir={locale === "fa" ? "rtl" : "ltr"}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

@@ -26,7 +26,7 @@ const stats = [
 export default function AdminDashboard() {
   const t = useTranslations("AdminDashboard")
   return (
-    <div className="flex min-w-0 flex-col gap-8 mt-6 px-4 sm:px-6 md:mr-72 lg:ml-8 lg:mt-10">
+    <div className="flex min-w-0 flex-col gap-8 mt-6 px-4 sm:px-6 lg:ml-8 lg:mt-10">
       <header>
         <h1 className="text-3xl font-bold text-foreground"> {t("title")}</h1>
 

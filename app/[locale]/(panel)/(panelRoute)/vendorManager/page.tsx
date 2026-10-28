@@ -9,20 +9,19 @@ import {
   ShieldCheck,
   ShoppingBag,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function VendorManager() {
+  const t = useTranslations("VendorManager");
+
   const vendors = mockUser.filter((item) => item.role === "vendor");
 
   return (
-    <section className="flex flex-col md:mr-70 gap-10 px-10 md:px-20 ">
+    <section className="flex flex-col gap-10 px-10 md:px-20 ">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
-          <h1 className="text-foreground text-3xl font-bold">
-            مدیریت فروشندگان
-          </h1>
-          <p className="text-text-title text-xl">
-            اطلاعات و حساب فروشندگان فروشگاه را مدیریت کنید.
-          </p>
+          <h1 className="text-foreground text-3xl font-bold">{t("title")}</h1>
+          <p className="text-text-title text-xl">{t("description")}</p>
         </div>
         <p className="bg-foreground p-3 rounded-xl h-auto text-background">
           <ShoppingBag />
@@ -33,7 +32,7 @@ export default function VendorManager() {
         <div className="rounded-2xl border border-white/10 bg-second-background p-5">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-text-title">تعداد فروشندگان</p>
+              <p className="text-sm text-text-title"> {t("vendorCount")} </p>
               <p className="mt-3 text-3xl font-bold text-foreground">
                 {vendors.length}
               </p>
@@ -48,8 +47,8 @@ export default function VendorManager() {
         <div className="rounded-2xl border border-white/10 bg-second-background p-5">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-text-title">نوع حساب</p>
-              <p className="mt-3 text-xl font-bold">فروشنده</p>
+              <p className="text-sm text-text-title"> {t("accountType")} </p>
+              <p className="mt-3 text-xl font-bold"> {t("vendor")}</p>
             </div>
 
             <div className="rounded-xl bg-second-background p-3">
@@ -61,10 +60,11 @@ export default function VendorManager() {
 
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">فهرست فروشندگان</h2>
+          <h2 className="text-lg font-semibold"> {t("vendorList")}</h2>
 
           <span className="text-sm text-text-title">
-            {vendors.length} فروشنده
+            {/* {vendors.length} فروشنده */}
+            {t("vendorCountLabel", { count: vendors.length })}
           </span>
         </div>
 
@@ -80,14 +80,12 @@ export default function VendorManager() {
                     <Store size={27} />
                   </div>
 
-                  <div className=" flex  flex-col" >
-                    <h3 className=" text-base font-bold">
-                      {item.name}
-                    </h3>
+                  <div className=" flex  flex-col">
+                    <h3 className=" text-base font-bold">{item.name}</h3>
 
                     <p className="mt-2 flex items-center gap-1.5 rounded-full bg-second-background text-xs text-foreground">
                       <ShieldCheck size={14} />
-                      فروشنده
+                      {t("vendor")}
                     </p>
                   </div>
                 </div>
@@ -97,7 +95,9 @@ export default function VendorManager() {
                   <Mail size={18} className="mt-0.5 shrink-0 text-text-title" />
 
                   <div className="min-w-0">
-                    <p className="text-xs text-text-title">آدرس ایمیل</p>
+                    <p className="text-xs text-text-title">
+                      {t("emailAddress")}
+                    </p>
 
                     <p className="mt-1 break-all text-sm text-text-title">
                       {item.email}
@@ -113,10 +113,10 @@ export default function VendorManager() {
               <Store size={32} className="text-[#FABE2C]" />
             </div>
 
-            <h3 className="mt-4 font-semibold">فروشنده‌ای ثبت نشده است</h3>
+            <h3 className="mt-4 font-semibold"> {t("emptyTitle")}</h3>
 
             <p className="mt-2 text-sm text-text-title">
-              در حال حاضر فروشنده‌ای در فهرست وجود ندارد.
+              {t("emptyDescription")}
             </p>
           </div>
         )}

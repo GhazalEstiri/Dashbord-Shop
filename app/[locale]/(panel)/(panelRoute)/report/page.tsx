@@ -1,15 +1,18 @@
 import SalesChart from "@/component/dashbord/SalesChart";
+import { useTranslations } from "next-intl";
 export default function Report() {
+    const t = useTranslations("Report");
+
   return (
-    <div className="flex flex-col md:mr-70 gap-10 px-10 md:px-20 relative">
+    <div className="flex flex-col gap-10 px-10 md:px-20 relative">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
           <h1 className="text-foreground text-3xl font-bold">
-            {" "}
-            آمار و گزارشات فروش
+            {" "}{t("title")}
           </h1>
           <p className="text-text-title text-xl">
-            وضعیت فروش سفارشات خود را اینجا مشاهده بکنید
+                       {t("description")}
+
           </p>
         </div>
       </header>

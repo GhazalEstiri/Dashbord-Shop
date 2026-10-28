@@ -8,7 +8,7 @@ export default function Account() {
   const t = useTranslations("Account");
   console.log(user);
   return (
-    <section className=" flex flex-col md:mr-70 gap-10 px-5 lg:px-20">
+    <section className=" flex flex-col  gap-10 px-5 lg:px-20">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
           <h1 className="text-foreground text-3xl font-bold"> {t("title")}</h1>

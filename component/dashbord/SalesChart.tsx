@@ -26,7 +26,7 @@ export default function SalesChart() {
   ];
   return (
     <>
-      <div className="h-90 max-w-300 lg:mr-80 md:mr-85 mb-20 flex justify-center flex-col items-center  mr-10">
+      <div className="h-90 max-w-300  mb-20 flex justify-center flex-col items-center  mr-80">
         <h1 className="text-foreground flex items-center justify-center text-center">
        {t("title")}
         </h1>

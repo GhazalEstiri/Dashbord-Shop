@@ -5,9 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import type { Rootstate, AppDispatch } from "@/lib/store";
 import { add, deleteProduct } from "@/faeture/product/productSlice";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 export default function Product() {
   const t = useTranslations("Product");
+  const locale = useLocale();
+  const productT = useTranslations("Products");
+
   const product = useSelector(
     (state: Rootstate) => state.productSlicing.product,
   );
@@ -41,7 +44,7 @@ export default function Product() {
     dispatch(deleteProduct(id));
   }
   return (
-    <section className="flex flex-col md:mr-70 gap-10 px-10 md:px-20">
+    <section className="flex flex-col gap-10 px-10 md:px-20">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
           <h1 className="text-foreground text-3xl font-bold"> {t("title")}</h1>
@@ -68,9 +71,15 @@ export default function Product() {
                   />
                 </p>
                 <div className="flex flex-col gap-4">
-                  <p className="font-bold text-lg">{item.title}</p>
+                  <p className="font-bold text-lg">
+                    {" "}
+                    {productT(item.titleKey)}
+                  </p>
                   <p className="text-foreground">
-                    {t("currency")}: {item.price.toLocaleString("fa-IR")}{" "}
+                    {t("currency")}:{" "}
+                    {item.price.toLocaleString(
+                      locale === "fa" ? "fa-IR" : "en-US",
+                    )}{" "}
                   </p>
                   <p
                     className={`${item.status === "available" ? "text-green-ok" : "text-red-900"}`}

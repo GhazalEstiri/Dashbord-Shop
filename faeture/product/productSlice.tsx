@@ -8,6 +8,7 @@ type Product = {
   price: number;
   image: string;
 };
+
 type Everyproduct = {
   product: Product[];
 };

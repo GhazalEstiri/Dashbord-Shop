@@ -4,7 +4,13 @@ import { products } from "@/lib/data/product";
 import { useDispatch, useSelector } from "react-redux";
 import type { Rootstate, AppDispatch } from "@/lib/store";
 import { deleteProduct } from "@/faeture/product/productSlice";
+import { useLocale, useTranslations } from "next-intl";
+
 export default function ProductManager() {
+  const locale = useLocale();
+
+  const t = useTranslations("ProductManager");
+  const productT = useTranslations("Products");
   const product = useSelector(
     (state: Rootstate) => state.productSlicing.product,
   );
@@ -13,13 +19,11 @@ export default function ProductManager() {
     dispatch(deleteProduct(id));
   }
   return (
-    <section className=" flex flex-col md:mr-70 gap-10 px-10 md:px-20">
+    <section className=" flex flex-col gap-10 px-10 md:px-20">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
-          <h1 className="text-foreground text-3xl font-bold">مدیریت محصولات</h1>
-          <p className="text-text-title text-xl">
-            مدیریت موجودی، قیمت و وضعیت محصولات
-          </p>
+          <h1 className="text-foreground text-3xl font-bold"> {t("title")} </h1>
+          <p className="text-text-title text-xl">{t("description")} </p>
         </div>
         <p className="bg-foreground p-3 rounded-xl h-auto text-background">
           <ShoppingBag />
@@ -34,17 +38,29 @@ export default function ProductManager() {
             >
               <div className="flex flex-col md:flex-row items-center gap-10 text-center md:text-start">
                 <p className="">
-                 <img src={item.image} alt="" className="w-15 h-15 rounded-full " />
+                  <img
+                    src={item.image}
+                    alt={t("imageAlt")}
+                    className="w-15 h-15 rounded-full "
+                  />
                 </p>
                 <div className="flex flex-col gap-4">
-                  <p className="font-bold text-lg">{item.title}</p>
+                  <p className="font-bold text-lg">
+                    {" "}
+                    {productT(item.titleKey)}
+                  </p>
                   <p className="text-foreground">
-                    تومان: {item.price.toLocaleString("fa-IR")}{" "}
+                    {t("currency")}{" "}
+                    {item.price.toLocaleString(
+                      locale === "fa" ? "fa-IR" : "en-Us",
+                    )}{" "}
                   </p>
                   <p
                     className={`${item.status === "available" ? "text-green-ok" : "text-red-900"}`}
                   >
-                    {item.status === "available" ? "موجود" : "ناموجود"}
+                    {item.status === "available"
+                      ? t("available")
+                      : t("unavailable")}{" "}
                   </p>
                 </div>
               </div>

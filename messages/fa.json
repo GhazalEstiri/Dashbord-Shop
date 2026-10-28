@@ -190,5 +190,56 @@
     "submit": "ثبت محصول",
     "close": "بستن",
     "delete": "حذف محصول"
+  },
+  "ProductManager": {
+    "title": "مدیریت محصولات",
+    "description": "مدیریت موجودی، قیمت و وضعیت محصولات",
+    "currency": "تومان",
+    "available": "موجود",
+    "unavailable": "ناموجود",
+    "imageAlt": "تصویر محصول",
+    "delete": "حذف محصول"
+  },
+  "Report": {
+    "title": "آمار و گزارشات فروش",
+    "description": "وضعیت فروش سفارشات خود را اینجا مشاهده کنید."
+  },
+  "ReportVendor": {
+    "spring": "آمار فصل بهار",
+    "summer": "آمار فصل تابستان",
+    "autumn": "آمار فصل پاییز",
+    "winter": "آمار فصل زمستان"
+  },
+  "UserManager": {
+    "title": "مدیریت کاربران",
+    "description": "مشاهده و مدیریت حساب‌های کاربران",
+    "userCount": "تعداد کاربران",
+    "userList": "فهرست کاربران",
+    "active": "فعال",
+    "inactive": "غیرفعال"
+  },
+  "VendorManager": {
+    "title": "مدیریت فروشندگان",
+    "description": "اطلاعات و حساب فروشندگان فروشگاه را مدیریت کنید.",
+    "vendorCount": "تعداد فروشندگان",
+    "accountType": "نوع حساب",
+    "vendor": "فروشنده",
+    "vendorList": "فهرست فروشندگان",
+    "vendorCountLabel": "{count} فروشنده",
+    "emailAddress": "آدرس ایمیل",
+    "emptyTitle": "فروشنده‌ای ثبت نشده است",
+    "emptyDescription": "در حال حاضر فروشنده‌ای در فهرست وجود ندارد."
+  },
+  "Products": {
+    "mascara": "ریمل ایزادورا",
+    "lipGloss": "لیپ گلاس کیکو",
+    "foundation": "کرم پودر مک",
+    "eyeshadowPalette": "پالت سایه چشم",
+    "blush": "رژگونه صورتی",
+    "eyeliner": "خط چشم مشکی",
+    "concealer": "کانسیلر",
+    "lipBalm": "بالم لب",
+    "highlighter": "هایلایتر",
+    "settingPowder": "پودر فیکس"
   }
 }

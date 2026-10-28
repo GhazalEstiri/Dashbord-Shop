@@ -4,8 +4,10 @@ import { AppDispatch, Rootstate } from "@/lib/store";
 import { House, Phone, Milestone, Star } from "lucide-react";
 import React, { useState } from "react";
 import { addad } from "@/faeture/product/productSlice";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 export default function Adress() {
+  const locale = useLocale();
+
   const [name, setName] = useState("");
   const [adress, setAdress] = useState("");
   const [postCode, setPostCode] = useState("");
@@ -40,7 +42,7 @@ export default function Adress() {
 
   console.log(user);
   return (
-    <section className="flex flex-col md:mr-70 gap-10 px-5 lg:px-20">
+    <section className="flex flex-col  gap-10 px-5 lg:px-20">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
           <h1 className="text-foreground text-3xl font-bold"> {t("title")}</h1>
@@ -63,6 +65,9 @@ export default function Adress() {
       </div>
 
       <div className="rounded-2xl relative border border-white/10 bg-second-background p-5 w-full flex flex-col items-start gap-5">
+        <p className=" border border-foreground rounded-2xl px-5 py-2 flex text-foreground gap-2">
+          <Star fill="bg-foreground" /> {t("defaultAddress")}
+        </p>
         {user && (
           <div className=" flex flex-row gap-5 ">
             <p className="text-foreground border border-foreground flex items-center justify-center rounded-full  h-10 w-10 mx-auto">
@@ -74,18 +79,19 @@ export default function Adress() {
               <p>{user?.adress?.Path}</p>
               <p className="flex flex-row gap-2">
                 <Milestone className="text-foreground" /> {t("postalAddress")} :
-                {user?.adress?.postcode.toLocaleString("fa-IR")}
+                {user?.adress?.postcode.toLocaleString(
+                  locale === "fa" ? "fa-IR" : "en-Us",
+                )}
               </p>
               <p className="flex flex-row gap-2">
                 <Phone className="text-foreground" /> {t("phoneNumber")} :
-                {user?.adress?.phoneNumber.toLocaleString("fa-IR")}
+                {user?.adress?.phoneNumber.toLocaleString(
+                  locale === "fa" ? "fa-IR" : "en-Us",
+                )}
               </p>
             </div>
           </div>
         )}
-        <p className="absolute left-5 top-5 border border-foreground rounded-2xl px-5 py-2 flex text-foreground gap-2">
-          <Star fill="bg-foreground" /> {t("defaultAddress")}
-        </p>
       </div>
       {adresses.length > 0 ? (
         <div className="rounded-2xl relative border border-white/10 bg-second-background p-5 w-full flex flex-col items-start gap-5 mb-10">
@@ -102,11 +108,11 @@ export default function Adress() {
                   <p className="flex flex-row gap-2">
                     <Milestone className="text-foreground" />{" "}
                     {t("postalAddress")} :
-                    {item.postCode.toLocaleString("fa-IR")}
+                    {item.postCode.toLocaleString(locale==="fa"?"fa-IR":"en-Us")}
                   </p>
                   <p className="flex flex-row gap-2">
                     <Phone className="text-foreground" /> {t("phoneNumber")} :{" "}
-                    {item.phoneNumber.toLocaleString("fa-IR")}
+                    {item.phoneNumber.toLocaleString(locale==="fa"?"fa-IR":"en-Us")}
                   </p>
                 </div>
               </div>

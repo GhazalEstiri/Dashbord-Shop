@@ -191,5 +191,56 @@
     "submit": "Save Product",
     "close": "Close",
     "delete": "Delete Product"
+  },
+  "ProductManager": {
+    "title": "Product Management",
+    "description": "Manage product inventory, prices, and status",
+    "currency": "Toman",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "imageAlt": "Product image",
+    "delete": "Delete product"
+  },
+  "Report": {
+    "title": "Sales Statistics and Reports",
+    "description": "View your order sales status here."
+  },
+  "ReportVendor": {
+    "spring": "Spring Statistics",
+    "summer": "Summer Statistics",
+    "autumn": "Autumn Statistics",
+    "winter": "Winter Statistics"
+  },
+  "UserManager": {
+    "title": "User Management",
+    "description": "View and manage user accounts",
+    "userCount": "Total Users",
+    "userList": "User List",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "VendorManager": {
+    "title": "Vendor Management",
+    "description": "Manage store vendors and their accounts.",
+    "vendorCount": "Total Vendors",
+    "accountType": "Account Type",
+    "vendor": "Vendor",
+    "vendorList": "Vendor List",
+    "vendorCountLabel": "{count} vendors",
+    "emailAddress": "Email Address",
+    "emptyTitle": "No Vendors Registered",
+    "emptyDescription": "There are currently no vendors in the list."
+  },
+  "Products": {
+    "mascara": "IsaDora Mascara",
+    "lipGloss": "KIKO Lip Gloss",
+    "foundation": "MAC Foundation",
+    "eyeshadowPalette": "Eyeshadow Palette",
+    "blush": "Pink Blush",
+    "eyeliner": "Black Eyeliner",
+    "concealer": "Concealer",
+    "lipBalm": "Lip Balm",
+    "highlighter": "Highlighter",
+    "settingPowder": "Setting Powder"
   }
 }

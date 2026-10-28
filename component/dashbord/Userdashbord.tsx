@@ -12,7 +12,7 @@ import { useTranslations } from "next-intl";
 export default function UserDashbord() {
   const t = useTranslations("UserDashbord");
   return (
-    <section className="md:mr-80 mt-10">
+    <section className=" mt-10 mb-10">
       <div className=" flex justify-between items-center px-10">
         <div className="flex flex-row items-center gap-3">
           <p className="bg-[#272B31] rounded-full text-foreground p-3">
