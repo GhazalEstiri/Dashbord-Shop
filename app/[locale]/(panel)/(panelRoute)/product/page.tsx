@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import type { Rootstate, AppDispatch } from "@/lib/store";
 import { add, deleteProduct } from "@/faeture/product/productSlice";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 export default function Product() {
+  const t = useTranslations("Product");
   const product = useSelector(
     (state: Rootstate) => state.productSlicing.product,
   );
@@ -42,10 +44,8 @@ export default function Product() {
     <section className="flex flex-col md:mr-70 gap-10 px-10 md:px-20">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
-          <h1 className="text-foreground text-3xl font-bold">مدیریت محصولات</h1>
-          <p className="text-text-title text-xl">
-            مدیریت موجودی، قیمت و وضعیت محصولات
-          </p>
+          <h1 className="text-foreground text-3xl font-bold"> {t("title")}</h1>
+          <p className="text-text-title text-xl">{t("description")}</p>
         </div>
         <p className="bg-foreground p-3 rounded-xl h-auto text-background">
           <ShoppingBag />
@@ -63,19 +63,21 @@ export default function Product() {
                 <p className="">
                   <img
                     src={item.image}
-                    alt=""
+                    alt={t("imagePreview")}
                     className="w-15 h-15 rounded-full "
                   />
                 </p>
                 <div className="flex flex-col gap-4">
                   <p className="font-bold text-lg">{item.title}</p>
                   <p className="text-foreground">
-                    تومان: {item.price.toLocaleString("fa-IR")}{" "}
+                    {t("currency")}: {item.price.toLocaleString("fa-IR")}{" "}
                   </p>
                   <p
                     className={`${item.status === "available" ? "text-green-ok" : "text-red-900"}`}
                   >
-                    {item.status === "available" ? "موجود" : "ناموجود"}
+                    {item.status === "available"
+                      ? t("available")
+                      : t("unavailable")}
                   </p>
                 </div>
               </div>
@@ -98,13 +100,13 @@ export default function Product() {
           )?.showModal()
         }
       >
-        اضافه کردن محصول
+        {t("addProduct")}
       </button>
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box bg-second-background">
           <form action="" onSubmit={handleAdd} className=" flex flex-col gap-5">
             <div className="flex flex-col gap-3">
-              <p className="text-foreground">تصویر محصول:</p>
+              <p className="text-foreground">{t("image")}</p>
 
               <input
                 type="file"
@@ -128,31 +130,31 @@ export default function Product() {
               {image && (
                 <img
                   src={image}
-                  alt="پیش‌نمایش محصول"
+                  alt={t("imagePreview")}
                   className="w-24 h-24 object-cover rounded-xl border border-white/10"
                 />
               )}
             </div>
 
-            <p className="text-foreground">نام محصول:</p>
+            <p className="text-foreground">{t("productName")}</p>
             <input
               type="text"
               value={title}
-              placeholder="نام محصول را وارد کنید."
+              placeholder={t("productNamePlaceholder")}
               onChange={(e) => setTitle(e.target.value)}
               className="bg-background h-10 outline-none "
             />
-            <p className="text-foreground">قیمت محصول:</p>
+            <p className="text-foreground">{t("productPrice")}</p>
 
             <input
               type="text"
               value={price}
-              placeholder="قیمت محصول را وارد کنید."
+              placeholder={t("productPricePlaceholder")}
               onChange={(e) => setPrice(e.target.value)}
               className="bg-second-background h-10 outline-none"
             />
             <div className="bg-background text-text-base w-full">
-              <p className="text-foreground">وضعیت محصول:</p>
+              <p className="text-foreground"> {t("productStatus")}</p>
               <select
                 name=""
                 id=""
@@ -161,14 +163,17 @@ export default function Product() {
                 }
                 className=" text-text-title h-10 outline-none cursor-pointer"
               >
-                <option value="موجود" className="bg-text-base text-background">
-                  موجود
+                <option
+                  value="available"
+                  className="bg-text-base text-background"
+                >
+                  {t("available")}
                 </option>
                 <option
-                  value="ناموجود"
+                  value="unavailable"
                   className="bg-text-base text-background hover:bg-foreground "
                 >
-                  ناموجود
+                  {t("unavailable")}
                 </option>
               </select>
             </div>
@@ -176,13 +181,13 @@ export default function Product() {
               type="submit"
               className="btn bg-foreground text-background border-none"
             >
-              ثبت محصول
+              {t("submit")}
             </button>
           </form>
           <div className="modal-action">
             <form method="dialog">
               <button className="btn bg-background text-foreground border-none">
-                بستن
+                {t("close")}
               </button>
             </form>
           </div>

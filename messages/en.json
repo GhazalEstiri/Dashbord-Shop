@@ -161,5 +161,35 @@
     "submit": "Submit Review",
     "delete": "Delete Review",
     "close": "Close"
+  },
+  "Favorite": {
+    "title": "Favorites",
+    "description": "View your favorite products here.",
+    "available": "Available",
+    "unavailable": "Unavailable"
+  },
+  "OrderStatus": {
+    "title": "Orders",
+    "description": "View the status of your orders here.",
+    "confirmed": "Confirmed",
+    "cancelled": "Cancelled"
+  },
+  "Product": {
+    "title": "Product Management",
+    "description": "Manage product inventory, prices, and status",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "currency": "Toman",
+    "addProduct": "Add Product",
+    "image": "Product Image:",
+    "imagePreview": "Product Preview",
+    "productName": "Product Name:",
+    "productNamePlaceholder": "Enter product name.",
+    "productPrice": "Product Price:",
+    "productPricePlaceholder": "Enter product price.",
+    "productStatus": "Product Status:",
+    "submit": "Save Product",
+    "close": "Close",
+    "delete": "Delete Product"
   }
 }

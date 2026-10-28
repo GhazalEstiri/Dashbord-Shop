@@ -160,5 +160,35 @@
     "submit": "ثبت دیدگاه",
     "delete": "حذف دیدگاه",
     "close": "بستن"
+  },
+  "Favorite": {
+    "title": "علاقه‌مندی‌ها",
+    "description": "محصولات مورد علاقه خود را اینجا مشاهده کنید.",
+    "available": "موجود",
+    "unavailable": "ناموجود"
+  },
+  "OrderStatus": {
+    "title": "سفارش‌ها",
+    "description": "وضعیت سفارش‌های خود را اینجا مشاهده کنید.",
+    "confirmed": "تأیید شده",
+    "cancelled": "لغو شده"
+  },
+  "Product": {
+    "title": "مدیریت محصولات",
+    "description": "مدیریت موجودی، قیمت و وضعیت محصولات",
+    "available": "موجود",
+    "unavailable": "ناموجود",
+    "currency": "تومان",
+    "addProduct": "اضافه کردن محصول",
+    "image": "تصویر محصول:",
+    "imagePreview": "پیش‌نمایش محصول",
+    "productName": "نام محصول:",
+    "productNamePlaceholder": "نام محصول را وارد کنید.",
+    "productPrice": "قیمت محصول:",
+    "productPricePlaceholder": "قیمت محصول را وارد کنید.",
+    "productStatus": "وضعیت محصول:",
+    "submit": "ثبت محصول",
+    "close": "بستن",
+    "delete": "حذف محصول"
   }
 }
