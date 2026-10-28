@@ -1,18 +1,4 @@
 {
-  "SalesChart": {
-    "title": "آمار فروش محصولات",
-    "months": {
-      "farvardin": "فروردین",
-      "ordibehesht": "اردیبهشت",
-      "khordad": "خرداد",
-      "tir": "تیر",
-      "mordad": "مرداد",
-      "shahrivar": "شهریور",
-      "mehr": "مهر"
-    },
-    "sales": "فروش",
-    "million": "میلیون"
-  },
   "AdminDashboard": {
     "title": "داشبورد مدیریت",
     "welcome": "به پنل مدیریت فروشگاه ویترین خوش آمدید.",
@@ -32,13 +18,13 @@
   "sidebar": {
     "account": "اطلاعات حساب کاربری",
     "adminpanel": "پنل مدیریت",
-    "adress": "آدرس ها",
-    "comments": "دیدگاه و پرسش ها",
+    "adress": "آدرس‌ها",
+    "comments": "دیدگاه و پرسش‌ها",
     "dashbord": "داشبورد",
-    "exitAccount": "خروج از حساب کاربری ",
-    "favorites": "علاقه مندی ها ",
-    "orderManager": "مدیریت سفارش ها",
-    "orders": "سفارش ها",
+    "exitAccount": "خروج از حساب کاربری",
+    "favorites": "علاقه‌مندی‌ها",
+    "orderManager": "مدیریت سفارش‌ها",
+    "orders": "سفارش‌ها",
     "productManager": "مدیریت محصولات",
     "products": "محصولات",
     "reports": "آمار و گزارش‌ها",
@@ -48,7 +34,50 @@
     "userpanel": "پنل کاربر",
     "vendorManager": "مدیریت فروشگاه",
     "vendorpanel": "پنل فروشنده",
-    "vitrin": " ویترین"
+    "vitrin": "ویترین"
+  },
+  "Account": {
+    "title": "حساب کاربری",
+    "description": "اطلاعات حساب و سطح دسترسی خود را مشاهده کنید.",
+    "username": "نام کاربری",
+    "email": "ایمیل",
+    "userStatus": "وضعیت کاربر",
+    "active": "فعال",
+    "inactive": "غیرفعال",
+    "roleAccess": "نقش و سطح دسترسی",
+    "roles": {
+      "admin": "ادمین",
+      "vendor": "فروشنده",
+      "user": "کاربر"
+    }
+  },
+  "VendorDashboard": {
+    "title": "داشبورد فروشنده",
+    "welcome": "به پنل فروشنده در فروشگاه ویترین خوش آمدید.",
+    "monthlySales": "فروش این ماه",
+    "monthlySalesValue": "۲۵ میلیون تومان",
+    "monthlySalesDescription": "مجموع فروش فروشگاه",
+    "orders": "سفارش‌ها",
+    "ordersValue": "۱۲۵",
+    "ordersDescription": "سفارش‌های ثبت‌شده",
+    "activeProducts": "محصولات فعال",
+    "activeProductsValue": "۲۰",
+    "activeProductsDescription": "در فروشگاه",
+    "pendingOrders": "سفارش در انتظار",
+    "pendingOrdersValue": "۲۴",
+    "pendingOrdersDescription": "نیاز به پیگیری",
+    "latestOrders": "آخرین سفارش‌ها",
+    "viewAll": "مشاهده همه",
+    "products": {
+      "concealer": "کانسیلر",
+      "pinkBlush": "رژگونه صورتی",
+      "highlighter": "هایلایتر"
+    },
+    "orderStatus": {
+      "pending": "در انتظار",
+      "approved": "تأیید شده",
+      "cancelled": "لغو شده"
+    }
   },
   "UserDashbord": {
     "userName": "شقایق مقیمی",
@@ -79,49 +108,21 @@
     "support": "پشتیبانی",
     "supportDescription": "پیگیری درخواست‌ها"
   },
-
-  "VendorDashboard": {
-    "title": "داشبورد فروشنده",
-    "welcome": "به پنل فروشنده در فروشگاه ویترین خوش آمدید.",
-    "monthlySales": "فروش این ماه",
-    "monthlySalesValue": "۲۵ میلیون تومان",
-    "monthlySalesDescription": "مجموع فروش فروشگاه",
-    "orders": "سفارش‌ها",
-    "ordersValue": "۱۲۵",
-    "ordersDescription": "سفارش‌های ثبت‌شده",
-    "activeProducts": "محصولات فعال",
-    "activeProductsValue": "۲۰",
-    "activeProductsDescription": "در فروشگاه",
-    "pendingOrders": "سفارش در انتظار",
-    "pendingOrdersValue": "۲۴",
-    "pendingOrdersDescription": "نیاز به پیگیری",
-    "latestOrders": "آخرین سفارش‌ها",
-    "viewAll": "مشاهده همه",
-    "products": {
-      "concealer": "کانسیلر",
-      "pinkBlush": "رژگونه صورتی",
-      "highlighter": "هایلایتر"
+  "SalesChart": {
+    "title": "آمار فروش محصولات",
+    "months": {
+      "farvardin": "فروردین",
+      "ordibehesht": "اردیبهشت",
+      "khordad": "خرداد",
+      "tir": "تیر",
+      "mordad": "مرداد",
+      "shahrivar": "شهریور",
+      "mehr": "مهر"
     },
-    "orderStatus": {
-      "pending": "در انتظار",
-      "approved": "تأیید شده",
-      "cancelled": "لغو شده"
-    }
-  },"Account": {
-  "title": "حساب کاربری",
-  "description": "اطلاعات حساب و سطح دسترسی خود را مشاهده کنید.",
-  "username": "نام کاربری",
-  "email": "ایمیل",
-  "userStatus": "وضعیت کاربر",
-  "active": "فعال",
-  "inactive": "غیرفعال",
-  "roleAccess": "نقش و سطح دسترسی",
-  "roles": {
-    "admin": "ادمین",
-    "vendor": "فروشنده",
-    "user": "کاربر"
-  }
-},"Adress": {
+    "sales": "فروش",
+    "million": "میلیون"
+  },
+"Adress": {
   "title": "آدرس کاربر",
   "description": "اطلاعات مربوط به آدرس خود را اینجا وارد کنید.",
   "addNewAddress": "افزودن آدرس جدید",
@@ -144,4 +145,5 @@
     "close": "بستن"
   }
 }
+
 }

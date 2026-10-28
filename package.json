@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently --raw \"next dev --turbo\" \"i18nexus listen\"",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

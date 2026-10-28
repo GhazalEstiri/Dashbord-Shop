@@ -4,12 +4,14 @@ import { AppDispatch, Rootstate } from "@/lib/store";
 import { House, Phone, Milestone, Star } from "lucide-react";
 import React, { useState } from "react";
 import { addad } from "@/faeture/product/productSlice";
-import { it } from "node:test";
+import { useTranslations } from "next-intl";
 export default function Adress() {
   const [name, setName] = useState("");
   const [adress, setAdress] = useState("");
   const [postCode, setPostCode] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const t = useTranslations("Adress");
 
   const user = useSelector((state: Rootstate) => state.auth.user);
 
@@ -41,17 +43,13 @@ export default function Adress() {
     <section className="flex flex-col md:mr-70 gap-10 px-5 lg:px-20">
       <header className="flex flex-row justify-between items-center">
         <div className="flex flex-col mt-10 gap-5">
-          <h1 className="text-foreground text-3xl font-bold"> آدرس کاربر</h1>
-          <p className="text-text-title text-xl">
-            اطلاعات مربوط به آدرس خود را اینجا وارد کنید.
-          </p>
+          <h1 className="text-foreground text-3xl font-bold"> {t("title")}</h1>
+          <p className="text-text-title text-xl">{t("description")} </p>
         </div>
       </header>
       <div className="rounded-2xl border border-white/10 bg-second-background p-5 w-full flex flex-col items-start gap-5 justify-between">
-        <p className="text-foreground text-xl">افزودن آدرس جدید</p>
-        <p className="text-text-title">
-          برای ثبت آدرس جدید روی دکمه زیر کلیک کنید.
-        </p>
+        <p className="text-foreground text-xl">{t("addNewAddress")}</p>
+        <p className="text-text-title">{t("addAddressDescription")} </p>
         <button
           className="bg-foreground px-10 py-3 hover:translate-y-0.5 cursor-copy hover:transition ease-in rounded-2xl text-background"
           onClick={() =>
@@ -60,7 +58,7 @@ export default function Adress() {
             )?.showModal()
           }
         >
-          + افزودن آدرس
+          + {t("addAddress")}
         </button>
       </div>
 
@@ -75,18 +73,18 @@ export default function Adress() {
               <p>{user?.adress?.name}</p>
               <p>{user?.adress?.Path}</p>
               <p className="flex flex-row gap-2">
-                <Milestone className="text-foreground" /> آدرس پستی :{" "}
+                <Milestone className="text-foreground" /> {t("postalAddress")} :
                 {user?.adress?.postcode.toLocaleString("fa-IR")}
               </p>
               <p className="flex flex-row gap-2">
-                <Phone className="text-foreground" /> شماره تلفن :{" "}
+                <Phone className="text-foreground" /> {t("phoneNumber")} :
                 {user?.adress?.phoneNumber.toLocaleString("fa-IR")}
               </p>
             </div>
           </div>
         )}
         <p className="absolute left-5 top-5 border border-foreground rounded-2xl px-5 py-2 flex text-foreground gap-2">
-          <Star fill="bg-foreground" /> آدرس پیش فرض
+          <Star fill="bg-foreground" /> {t("defaultAddress")}
         </p>
       </div>
       {adresses.length > 0 ? (
@@ -102,11 +100,12 @@ export default function Adress() {
                   <p>{item?.name}</p>
                   <p>{item.adress}</p>
                   <p className="flex flex-row gap-2">
-                    <Milestone className="text-foreground" /> آدرس پستی :{" "}
+                    <Milestone className="text-foreground" />{" "}
+                    {t("postalAddress")} :
                     {item.postCode.toLocaleString("fa-IR")}
                   </p>
                   <p className="flex flex-row gap-2">
-                    <Phone className="text-foreground" /> شماره تلفن :{" "}
+                    <Phone className="text-foreground" /> {t("phoneNumber")} :{" "}
                     {item.phoneNumber.toLocaleString("fa-IR")}
                   </p>
                 </div>
@@ -115,42 +114,41 @@ export default function Adress() {
           })}
         </div>
       ) : (
-        <p className="text-text-title">هنوز آدرس جدیدی ثبت نکرده‌اید.</p>
+        <p className="text-text-title">{t("emptyAddresses")}.</p>
       )}
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box bg-second-background">
           <form action="" onSubmit={handleAdd} className=" flex flex-col gap-5">
-            <p className="text-foreground">نام آدرس:</p>
+            <p className="text-foreground"> {t("form.addressName")}</p>
             <input
               type="text"
               value={name}
-              placeholder="نام محصول را وارد کنید."
+              placeholder={t("form.addressNamePlaceholder")}
               onChange={(e) => setName(e.target.value)}
               className="bg-background h-10 outline-none "
             />
-            <p className="text-foreground"> آدرس:</p>
-
+            <p className="text-foreground"> {t("form.address")}</p>
             <input
               type="text"
               value={adress}
-              placeholder="قیمت محصول را وارد کنید."
+              placeholder={t("form.addressPlaceholder")}
               onChange={(e) => setAdress(e.target.value)}
               className="bg-second-background h-10 outline-none"
             />
-            <p className="text-foreground">کد پستی :</p>
+            <p className="text-foreground">{t("form.postCode")}</p>
             <input
               type="text"
               value={postCode}
-              placeholder="کد پستی  را وارد کنید."
+              placeholder={t("form.postCodePlaceholder")}
               onChange={(e) => setPostCode(e.target.value)}
               className="bg-background h-10 outline-none "
             />
 
-            <p className="text-foreground">شماره تلفن :</p>
+            <p className="text-foreground">{phoneNumber}</p>
             <input
               type="text"
               value={phoneNumber}
-              placeholder="شماره تلفن را وارد کنید."
+              placeholder={t("form.phoneNumberPlaceholder")}
               onChange={(e) => setPhoneNumber(e.target.value)}
               className="bg-background h-10 outline-none "
             />
@@ -159,13 +157,13 @@ export default function Adress() {
               type="submit"
               className="btn bg-foreground text-background border-none"
             >
-              ثبت محصول
+              {t("form.submit")}{" "}
             </button>
           </form>
           <div className="modal-action">
             <form method="dialog">
               <button className="btn bg-background text-foreground border-none">
-                بستن
+                {t("form.close")}
               </button>
             </form>
           </div>
