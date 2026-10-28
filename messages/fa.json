@@ -122,28 +122,43 @@
     "sales": "فروش",
     "million": "میلیون"
   },
-"Adress": {
-  "title": "آدرس کاربر",
-  "description": "اطلاعات مربوط به آدرس خود را اینجا وارد کنید.",
-  "addNewAddress": "افزودن آدرس جدید",
-  "addAddressDescription": "برای ثبت آدرس جدید روی دکمه زیر کلیک کنید.",
-  "addAddress": "افزودن آدرس",
-  "postalAddress": "آدرس پستی:",
-  "phoneNumber": "شماره تلفن:",
-  "defaultAddress": "آدرس پیش‌فرض",
-  "emptyAddresses": "هنوز آدرس جدیدی ثبت نکرده‌اید.",
-  "form": {
-    "addressName": "نام آدرس:",
-    "addressNamePlaceholder": "نام آدرس را وارد کنید.",
-    "address": "آدرس:",
-    "addressPlaceholder": "آدرس خود را وارد کنید.",
-    "postCode": "کد پستی:",
-    "postCodePlaceholder": "کد پستی را وارد کنید.",
+  "Adress": {
+    "title": "آدرس کاربر",
+    "description": "اطلاعات مربوط به آدرس خود را اینجا وارد کنید.",
+    "addNewAddress": "افزودن آدرس جدید",
+    "addAddressDescription": "برای ثبت آدرس جدید روی دکمه زیر کلیک کنید.",
+    "addAddress": "افزودن آدرس",
+    "postalAddress": "آدرس پستی:",
     "phoneNumber": "شماره تلفن:",
-    "phoneNumberPlaceholder": "شماره تلفن را وارد کنید.",
-    "submit": "ثبت آدرس",
+    "defaultAddress": "آدرس پیش‌فرض",
+    "emptyAddresses": "هنوز آدرس جدیدی ثبت نکرده‌اید.",
+    "form": {
+      "addressName": "نام آدرس:",
+      "addressNamePlaceholder": "نام آدرس را وارد کنید.",
+      "address": "آدرس:",
+      "addressPlaceholder": "آدرس خود را وارد کنید.",
+      "postCode": "کد پستی:",
+      "postCodePlaceholder": "کد پستی را وارد کنید.",
+      "phoneNumber": "شماره تلفن:",
+      "phoneNumberPlaceholder": "شماره تلفن را وارد کنید.",
+      "submit": "ثبت آدرس",
+      "close": "بستن"
+    }
+  },
+  "Comment": {
+    "title": "دیدگاه‌های من",
+    "description": "نظراتی که برای محصولات ثبت کرده‌اید.",
+    "addNew": "افزودن نظر جدید",
+    "addDescription": "برای ثبت نظر جدید روی دکمه زیر کلیک کنید.",
+    "addButton": "افزودن نظر",
+    "registeredComments": "دیدگاه‌های ثبت‌شده",
+    "emptyComments": "هنوز دیدگاهی ثبت نکرده‌اید.",
+    "selectProduct": "انتخاب محصول:",
+    "selectProductPlaceholder": "محصول موردنظر را انتخاب کنید",
+    "yourComment": "دیدگاه شما:",
+    "commentPlaceholder": "نظر خود را درباره محصول بنویسید...",
+    "submit": "ثبت دیدگاه",
+    "delete": "حذف دیدگاه",
     "close": "بستن"
   }
-}
-
 }

@@ -145,5 +145,21 @@
       "submit": "Save Address",
       "close": "Close"
     }
+  },
+  "Comment": {
+    "title": "My Reviews",
+    "description": "Reviews you have submitted for products.",
+    "addNew": "Add a New Review",
+    "addDescription": "Click the button below to submit a new review.",
+    "addButton": "Add Review",
+    "registeredComments": "Submitted Reviews",
+    "emptyComments": "You haven't submitted any reviews yet.",
+    "selectProduct": "Select Product:",
+    "selectProductPlaceholder": "Select a product",
+    "yourComment": "Your Review:",
+    "commentPlaceholder": "Write your review about the product...",
+    "submit": "Submit Review",
+    "delete": "Delete Review",
+    "close": "Close"
   }
 }
