@@ -11,7 +11,7 @@ type User = {
   role: Role;
   adress: {
     name: string;
-    Path: string;
+    path: string;
     phoneNumber: number;
     postcode: number;
   };
@@ -19,10 +19,12 @@ type User = {
 };
 type AuthState = {
   user: User | null;
+  initialized: boolean;
 };
 
 const initialState: AuthState = {
   user: null,
+  initialized: false,
 };
 
 export const authSlice = createSlice({
@@ -38,8 +40,11 @@ export const authSlice = createSlice({
     localUser: (state, action: PayloadAction<User>) => {
       state.user = action.payload;
     },
+    setInitialized: (state) => {
+      state.initialized = true;
+    },
   },
 });
 
-export const { login, logout, localUser } = authSlice.actions;
+export const { login, logout, localUser, setInitialized } = authSlice.actions;
 export const authReducer = authSlice.reducer;

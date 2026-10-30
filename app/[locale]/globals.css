@@ -15,7 +15,9 @@
   --second-background: #101318;
   --text-base: #ffffff;
   --text-title: #999999;
+  --title-in-circle: #fabe2c;
   --green-ok: #278052;
+  --bg-secondTitle: #272b31;
   --red-reject: #af4448;
   --gray-nothing: #767d85;
 }
@@ -32,11 +34,11 @@
   --background: #ffffff;
   --foreground: #c49a35;
   --second-background: #faf8f3;
-
   --text-base: #000000;
   --green-ok: #278052;
   --text-title: #29251a;
-
+  --bg-secondTitle: #c49a35;
+  --title-in-circle: #29251a;
   --red-reject: #af4448;
   --gray-nothing: #767d85;
 }
@@ -48,6 +50,8 @@
   --text-base: #ffffff;
   --green-ok: #278052;
   --red-reject: #af4448;
+  --title-in-circle: #fabe2c;
+  --bg-secondTitle: #272b31;
   --gray-nothing: #767d85;
   --gray-nothing: #767d85;
 }
@@ -59,7 +63,9 @@
   --color-green-ok: var(--green-ok);
   --color-red-reject: var(--red-reject);
   --color-gray-nothing: var(--gray-nothing);
+  --color-bg-secondTitle: var(--bg-secondTitle);
   --color-text-title: var(--text-title);
+  --color-title-in-circle: var(--title-in-circle);
   --font-sans: "Vazirmatn", sans-serif;
   --font-kamran: "Kamran", sans-serif;
 }

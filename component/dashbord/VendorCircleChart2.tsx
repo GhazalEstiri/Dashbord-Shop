@@ -8,11 +8,11 @@ import {
   TooltipIndex,
 } from "recharts";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
+const COLORS = ["#76520e", "#dbb42c", "#ffe169", "#FABE2C"];
 const data = [
-  { x: "تیر", value: 400, fill: COLORS[0] },
-  { x: "مرداد", value: 300, fill: COLORS[1] },
-  { x: "شهریور", value: 200, fill: COLORS[2] },
+  { x: "تیر", value: 500, fill: COLORS[0] },
+  { x: "مرداد", value: 250, fill: COLORS[1] },
+  { x: "شهریور", value: 250, fill: COLORS[2] },
 ];
 
 const PieGradient = (props: PieSectorShapeProps) => {
@@ -56,6 +56,13 @@ const PieGradient = (props: PieSectorShapeProps) => {
         <clipPath id={`clipPath${props.index}`}>
           <Sector {...props} />
         </clipPath>
+         {/* <Sector
+        {...props}
+        clipPath={`url(#clipPath${props.index})`}
+        fill={`url(#fillGradient${props.index})`}
+        stroke={`url(#borderGradient${props.index})`}
+        strokeWidth={props.isActive ? "100%" : 0}
+      /> */}
       </defs>
       <Sector
         {...props}
@@ -90,7 +97,7 @@ export default function PieWithGradient2({
         dataKey="value"
         nameKey="x"
         isAnimationActive={isAnimationActive}
-        shape={PieGradient}
+        // shape={PieGradient}
         innerRadius="20%"
       />
       <Tooltip defaultIndex={defaultIndex} />

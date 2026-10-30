@@ -7,7 +7,7 @@ import { addad } from "@/faeture/product/productSlice";
 import { useLocale, useTranslations } from "next-intl";
 export default function Adress() {
   const locale = useLocale();
-
+  const PathT = useTranslations("AddressPath");
   const [name, setName] = useState("");
   const [adress, setAdress] = useState("");
   const [postCode, setPostCode] = useState("");
@@ -75,8 +75,8 @@ export default function Adress() {
             </p>
 
             <div className="flex gap-5 flex-col">
-              <p>{user?.adress?.name}</p>
-              <p>{user?.adress?.Path}</p>
+              <p>{PathT(user.adress.name)}</p>
+              <p>{PathT(user.adress.path)}</p>
               <p className="flex flex-row gap-2">
                 <Milestone className="text-foreground" /> {t("postalAddress")} :
                 {user?.adress?.postcode.toLocaleString(
@@ -108,11 +108,15 @@ export default function Adress() {
                   <p className="flex flex-row gap-2">
                     <Milestone className="text-foreground" />{" "}
                     {t("postalAddress")} :
-                    {item.postCode.toLocaleString(locale==="fa"?"fa-IR":"en-Us")}
+                    {item.postCode.toLocaleString(
+                      locale === "fa" ? "fa-IR" : "en-Us",
+                    )}
                   </p>
                   <p className="flex flex-row gap-2">
                     <Phone className="text-foreground" /> {t("phoneNumber")} :{" "}
-                    {item.phoneNumber.toLocaleString(locale==="fa"?"fa-IR":"en-Us")}
+                    {item.phoneNumber.toLocaleString(
+                      locale === "fa" ? "fa-IR" : "en-Us",
+                    )}
                   </p>
                 </div>
               </div>

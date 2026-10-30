@@ -15,7 +15,7 @@ export default function UserDashbord() {
     <section className=" mt-10 mb-10">
       <div className=" flex justify-between items-center px-10">
         <div className="flex flex-row items-center gap-3">
-          <p className="bg-[#272B31] rounded-full text-foreground p-3">
+          <p className="bg-bg-secondTitle  text-title-in-circle rounded-full p-3">
             <UserRound size={40} />
           </p>
           <div>
@@ -56,7 +56,7 @@ export default function UserDashbord() {
         </div>
         <div className=" flex justify-between items-center px-10 w-full ">
           <div className="flex flex-row items-center gap-3   w-full">
-            <p className="bg-[#272B31] hidden  rounded-full text-foreground p-3 md:flex mb-15">
+            <p className="bg-bg-secondTitle  text-title-in-circle hidden  rounded-full  p-3 md:flex mb-15">
               <Package size={40} />
             </p>
             <div className="flex flex-col gap-2 w-full">
@@ -91,7 +91,7 @@ export default function UserDashbord() {
         </div>
         <div className=" flex justify-between items-center">
           <div className="flex flex-row items-center gap-3">
-            <p className="bg-[#272B31] rounded-full text-foreground p-2">
+            <p className="bg-bg-secondTitle  text-title-in-circle rounded-full p-2">
               <UserRound />
             </p>
             <div>
@@ -106,7 +106,7 @@ export default function UserDashbord() {
         </div>
         <div className=" flex justify-between items-center">
           <div className="flex flex-row items-center gap-3">
-            <p className="bg-[#272B31] rounded-full text-foreground p-2">
+            <p className="bg-bg-secondTitle  text-title-in-circle rounded-full  p-2">
               <MapPin />
             </p>
             <div>
@@ -120,7 +120,7 @@ export default function UserDashbord() {
         </div>{" "}
         <div className=" flex justify-between items-center">
           <div className="flex flex-row items-center gap-3">
-            <p className="bg-[#272B31] rounded-full text-foreground p-2">
+            <p className="bg-bg-secondTitle  text-title-in-circle rounded-full p-2">
               <CreditCard />
             </p>
             <div>
@@ -134,7 +134,7 @@ export default function UserDashbord() {
         </div>
         <div className=" flex justify-between items-center">
           <div className="flex flex-row items-center gap-3">
-            <p className="bg-[#272B31] rounded-full text-foreground p-2">
+            <p className="bg-bg-secondTitle  text-title-in-circle rounded-full  p-2">
               <Headset />
             </p>
             <div>

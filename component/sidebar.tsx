@@ -164,7 +164,11 @@ function SideBar() {
                 </Link>
               );
             })}
-            <div className="">
+            <div className="flex flex-col gap-5 mt-2">
+              <div className="flex flex-row items-center gap-5 mr-3">
+                <LanguageSwitcher />
+                <p>{t("changeLang")}</p>
+              </div>
               <div className="flex flex-row items-center gap-5 mr-3">
                 <ModeToggle />
                 <p>{t("themeChange")}</p>
@@ -173,7 +177,6 @@ function SideBar() {
           </nav>
           <div className="mt-auto border-t border-white/10 pt-4">
             <p className="text-center text-xs text-text-title">پنل ویترین</p>
-            <LanguageSwitcher />
           </div>
         </div>
       </aside>
@@ -237,16 +240,19 @@ function SideBar() {
                 </Link>
               );
             })}
-            <div className="">
+            <div className="flex flex-col">
               <div className="flex flex-row items-center gap-5 mr-3">
                 <ModeToggle />
                 <p>{t("themeChange")}</p>
+              </div>
+              <div className="flex flex-row items-center gap-5 mr-3">
+                <LanguageSwitcher />
+                <p>{t("changeLang")}</p>
               </div>
             </div>
           </nav>
           <div className="mt-auto border-t border-white/10 pt-4">
             <p className="text-center text-xs text-text-title">پنل ویترین</p>
-            <LanguageSwitcher />
           </div>
         </div>
       </aside>

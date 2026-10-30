@@ -8,10 +8,10 @@ import {
   TooltipIndex,
 } from "recharts";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
+const COLORS = ["#76520e", "#dbb42c", "#ffe169", "#FABE2C"];
 const data = [
-  { x: "مهر ", value: 400, fill: COLORS[0] },
-  { x: "آبان", value: 300, fill: COLORS[1] },
+  { x: "مهر ", value: 600, fill: COLORS[0] },
+  { x: "آبان", value: 200, fill: COLORS[1] },
   { x: "آذر", value: 200, fill: COLORS[2] },
 ];
 
@@ -90,7 +90,7 @@ export default function PieWithGradient3({
         dataKey="value"
         nameKey="x"
         isAnimationActive={isAnimationActive}
-        shape={PieGradient}
+        // shape={PieGradient}
         innerRadius="20%"
       />
       <Tooltip defaultIndex={defaultIndex} />

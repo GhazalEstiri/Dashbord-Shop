@@ -12,6 +12,7 @@ export default function LanguageSwitcher() {
     <select
       aria-label="Language"
       value={locale}
+      className='bg-background'
       onChange={event => router.replace(
         pathname + window.location.search + window.location.hash,
         {locale: event.target.value}

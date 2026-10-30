@@ -39,7 +39,7 @@ export default function UserManager() {
               key={item.id}
               className=" border-b border-white/10 bg-second-background p-5 flex flex-col md:flex-row items-center gap-5 mx-auto md:mx-0"
             >
-              <p className="bg-[#29251A] rounded-full p-3 text-foreground">
+              <p className="bg-bg-secondTitle  text-title-in-circle rounded-full p-3 ">
                 <User />
               </p>
               <div className=" flex justify-between w-full flex-col md:flex-row items-center">

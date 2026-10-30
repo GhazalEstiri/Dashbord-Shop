@@ -34,7 +34,8 @@
     "userpanel": "User Panel",
     "vendorManager": "Store Management",
     "vendorpanel": "Vendor Panel",
-    "vitrin": "Vitrin"
+    "vitrin": "Vitrin",
+    "changeLang": "Change Language"
   },
 
   "Account": {
@@ -242,5 +243,27 @@
     "lipBalm": "Lip Balm",
     "highlighter": "Highlighter",
     "settingPowder": "Setting Powder"
+  },
+  "AddressPath": {
+    "ghazalHome": "Ghazal's Home",
+    "ghazalPath": "Farmanieh, Andarzgoo Boulevard, North Salimi Street, No. 145",
+    "naziHome": "Nazi's Home",
+    "naziPath": "Nejatollahi Street, Arak Street, Mehr Alley, No. 3",
+    "shaghayeghHome": "Shaghayegh's Home",
+    "shaghayeghPath": "Valiasr Street, beginning of Zafaraniyeh Street, corner of Baghdadi Street",
+    "chalosHome": "Chalos's Home",
+    "chalosPath": "Fereshteh Street, Sam Center Shopping Mall, First Floor",
+    "hamidHome": "Hamid's Home",
+    "hamidPath": "Enghelab Street, Nejatollahi Street, Fallahpour Street, No. 33",
+    "minaHome": "Mina's Home",
+    "minaPath": "Elahiyeh, North Africa Avenue, Modern Elahiyeh Complex, Royal Floor, No. 4",
+    "nimaHome": "Nima's Home",
+    "nimaPath": "Baharestan Square, Daneshsara Street, Shariatmadar Rafie Street",
+    "sepidehHome": "Sepideh's Home",
+    "sepidehPath": "Karim Khan Street, Hosseini Street, near Sanai Square, No. 51",
+    "neginHome": "Negin's Home",
+    "neginPath": "Enghelab Street, between Razi and Khark Streets, end of Anjoman Ketab Alley",
+    "saeedHome": "Saeed's Home",
+    "saeedPath": "Valiasr Street, beginning of Zafaraniyeh Street, corner of Baghdadi Street"
   }
 }

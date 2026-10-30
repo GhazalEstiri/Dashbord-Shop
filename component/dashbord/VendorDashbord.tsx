@@ -26,7 +26,7 @@ export default function VendorDashboard() {
     },
   ];
   return (
-    <div className="space-y-8 flex flex-col mt-10 md:ml-8 px-10">
+    <div className="space-y-8 flex  flex-col mt-10 md:ml-8 px-10">
       <header>
         <h1 className="text-3xl font-bold text-foreground "> {t("title")}</h1>
 
