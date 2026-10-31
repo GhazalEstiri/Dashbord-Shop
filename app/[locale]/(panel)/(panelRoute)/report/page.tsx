@@ -1,4 +1,5 @@
-import SalesChart from "@/component/dashbord/SalesChart";
+// import SalesChart from "@/component/dashbord/SalesChart";
+import AreaChartFillByValue from "@/component/dashbord/reportVendor";
 import { useTranslations } from "next-intl";
 export default function Report() {
     const t = useTranslations("Report");
@@ -17,7 +18,8 @@ export default function Report() {
         </div>
       </header>
       <div className="-mr-70 mt-20">
-        <SalesChart />
+        {/* <SalesChart /> */}
+        <AreaChartFillByValue/>
       </div>
     </div>
   );

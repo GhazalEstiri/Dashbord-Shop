@@ -1,9 +1,9 @@
-
 type StatusProduct = "available" | "unavailable";
 
 export type Product = {
   id: number;
-  titleKey: string;
+  title: string;
+  titleKey?: string;
   status: StatusProduct;
   price: number;
   image: string;
@@ -12,6 +12,7 @@ export type Product = {
 export const products: Product[] = [
   {
     id: 1,
+    title: "mascara",
     titleKey: "mascara",
     status: "available",
     price: 450000,
@@ -20,6 +21,8 @@ export const products: Product[] = [
   },
   {
     id: 2,
+    title: "lipGloss",
+
     titleKey: "lipGloss",
     status: "unavailable",
     price: 380000,
@@ -27,13 +30,16 @@ export const products: Product[] = [
   },
   {
     id: 3,
+    title: "foundation",
     titleKey: "foundation",
     status: "available",
     price: 890000,
-    image: "https://torman.ir/wp-content/uploads/2023/05/mac-studio-fix.jpg.webp",
+    image:
+      "https://torman.ir/wp-content/uploads/2023/05/mac-studio-fix.jpg.webp",
   },
   {
     id: 4,
+    title: "eyeshadowPalette",
     titleKey: "eyeshadowPalette",
     status: "available",
     price: 1250000,
@@ -42,6 +48,7 @@ export const products: Product[] = [
   },
   {
     id: 5,
+    title: "blush",
     titleKey: "blush",
     status: "unavailable",
     price: 520000,
@@ -50,6 +57,7 @@ export const products: Product[] = [
   },
   {
     id: 6,
+    title: "eyeliner",
     titleKey: "eyeliner",
     status: "available",
     price: 310000,
@@ -58,6 +66,7 @@ export const products: Product[] = [
   },
   {
     id: 7,
+    title: "concealer",
     titleKey: "concealer",
     status: "available",
     price: 470000,
@@ -66,6 +75,7 @@ export const products: Product[] = [
   },
   {
     id: 8,
+    title: "lipBalm",
     titleKey: "lipBalm",
     status: "unavailable",
     price: 190000,
@@ -74,6 +84,7 @@ export const products: Product[] = [
   },
   {
     id: 9,
+    title: "highlighter",
     titleKey: "highlighter",
     status: "available",
     price: 610000,
@@ -82,6 +93,7 @@ export const products: Product[] = [
   },
   {
     id: 10,
+    title: "settingPowder",
     titleKey: "settingPowder",
     status: "unavailable",
     price: 720000,

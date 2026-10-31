@@ -1,5 +1,5 @@
 "use client";
-import { products } from "@/lib/data/product";
+// import { products } from "@/lib/data/product";
 import { ShoppingBag, Trash } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import type { Rootstate, AppDispatch } from "@/lib/store";
@@ -17,7 +17,9 @@ export default function Product() {
   const dispatch = useDispatch<AppDispatch>();
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const [status, setStatus] = useState<"موجود" | "ناموجود">("موجود");
+  const [status, setStatus] = useState<"available" | "unavailable">(
+    "available",
+  );
   const [image, setImage] = useState("");
   function handleAdd(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -35,7 +37,7 @@ export default function Product() {
     );
     setPrice("");
     setTitle("");
-    setStatus("موجود");
+    setStatus("available");
     setImage("");
     (document.getElementById("my_modal_1") as HTMLDialogElement)?.close();
   }
@@ -72,12 +74,11 @@ export default function Product() {
                 </p>
                 <div className="flex flex-col gap-4">
                   <p className="font-bold text-lg">
-                    {" "}
-                    {productT(item.titleKey)}
+                    {item.titleKey ? productT(item.titleKey) : item.title}
                   </p>
                   <p className="text-foreground">
                     {t("currency")}:{" "}
-                    {item.price.toLocaleString(
+                    {item.price?.toLocaleString(
                       locale === "fa" ? "fa-IR" : "en-US",
                     )}{" "}
                   </p>
@@ -168,7 +169,7 @@ export default function Product() {
                 name=""
                 id=""
                 onChange={(e) =>
-                  setStatus(e.target.value as "موجود" | "ناموجود")
+                  setStatus(e.target.value as "available" | "unavailable")
                 }
                 className=" text-text-title h-10 outline-none cursor-pointer"
               >

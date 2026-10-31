@@ -20,7 +20,7 @@ import {
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import type { Rootstate } from "@/lib/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLocale, useTranslations } from "next-intl";
 type Role = "admin" | "user" | "vendor";
@@ -109,7 +109,8 @@ function SideBar() {
   const locale = useLocale();
   const pathname = usePathname();
   const roleUser = useSelector((state: Rootstate) => state.auth.user?.role);
-  if (!roleUser) {
+  const initialized  = useSelector((state:Rootstate)=>state.auth.initialized)
+  if (!initialized||!roleUser) {
     return null;
   }
   const menuItems = menuItemRole[roleUser];
@@ -123,8 +124,8 @@ function SideBar() {
       <aside
         dir={locale === "fa" ? "rtl" : "ltr"}
         className={`fixed top-0 hidden md:flex h-screen w-72 flex-col
-  overflow-y-auto border-white/10 bg-second-background p-5
-  ${locale === "fa" ? "right-0 border-l" : "left-0 border-r"}`}
+        overflow-y-auto border-white/10 bg-second-background p-5
+       ${locale === "fa" ? "right-0 border-l" : "left-0 border-r"}`}
       >
         <div>
           <Link

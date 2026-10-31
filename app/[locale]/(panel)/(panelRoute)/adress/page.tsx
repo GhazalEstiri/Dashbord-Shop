@@ -108,13 +108,13 @@ export default function Adress() {
                   <p className="flex flex-row gap-2">
                     <Milestone className="text-foreground" />{" "}
                     {t("postalAddress")} :
-                    {item.postCode.toLocaleString(
+                    {item.postCode?.toLocaleString(
                       locale === "fa" ? "fa-IR" : "en-Us",
                     )}
                   </p>
                   <p className="flex flex-row gap-2">
                     <Phone className="text-foreground" /> {t("phoneNumber")} :{" "}
-                    {item.phoneNumber.toLocaleString(
+                    {item.phoneNumber?.toLocaleString(
                       locale === "fa" ? "fa-IR" : "en-Us",
                     )}
                   </p>
@@ -129,39 +129,51 @@ export default function Adress() {
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box bg-second-background">
           <form action="" onSubmit={handleAdd} className=" flex flex-col gap-5">
-            <p className="text-foreground"> {t("form.addressName")}</p>
-            <input
-              type="text"
-              value={name}
-              placeholder={t("form.addressNamePlaceholder")}
-              onChange={(e) => setName(e.target.value)}
-              className="bg-background h-10 outline-none "
-            />
-            <p className="text-foreground"> {t("form.address")}</p>
-            <input
-              type="text"
-              value={adress}
-              placeholder={t("form.addressPlaceholder")}
-              onChange={(e) => setAdress(e.target.value)}
-              className="bg-second-background h-10 outline-none"
-            />
-            <p className="text-foreground">{t("form.postCode")}</p>
-            <input
-              type="text"
-              value={postCode}
-              placeholder={t("form.postCodePlaceholder")}
-              onChange={(e) => setPostCode(e.target.value)}
-              className="bg-background h-10 outline-none "
-            />
+            <div className="flex flex-col gap-2">
+              <label className="text-foreground">
+                {" "}
+                {t("form.addressName")}
+              </label>
+              <input
+                type="text"
+                value={name}
+                placeholder={t("form.addressNamePlaceholder")}
+                onChange={(e) => setName(e.target.value)}
+                className="bg-background h-10 outline-none "
+              />
+            </div>
 
-            <p className="text-foreground">{phoneNumber}</p>
-            <input
-              type="text"
-              value={phoneNumber}
-              placeholder={t("form.phoneNumberPlaceholder")}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              className="bg-background h-10 outline-none "
-            />
+            <div className="flex flex-col gap-2">
+              <label className="text-foreground"> {t("form.address")}</label>
+              <input
+                type="text"
+                value={adress}
+                placeholder={t("form.addressPlaceholder")}
+                onChange={(e) => setAdress(e.target.value)}
+                className="bg-second-background h-10 outline-none"
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-foreground">{t("form.postCode")}</label>
+              <input
+                type="text"
+                value={postCode}
+                placeholder={t("form.postCodePlaceholder")}
+                onChange={(e) => setPostCode(e.target.value)}
+                className="bg-background h-10 outline-none "
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-foreground">{phoneNumber}</label>
+              <input
+                type="text"
+                value={phoneNumber}
+                placeholder={t("form.phoneNumberPlaceholder")}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                className="bg-background h-10 outline-none "
+              />
+            </div>
 
             <button
               type="submit"
