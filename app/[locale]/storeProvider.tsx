@@ -46,6 +46,7 @@ import { mockUser } from "@/lib/data/user";
 import { restoreAdress } from "@/faeture/product/productSlice";
 import { restoreComment } from "@/faeture/product/productSlice";
 import { restoreProduct } from "@/faeture/product/productSlice";
+import { restore } from "@/faeture/addProduct/addproductSlice";
 const STORAGE_KEY = "user-dashbord-app";
 
 export default function StoreProvider({
@@ -88,6 +89,8 @@ export default function StoreProvider({
         }
         if (data.productSlicing) {
           store.dispatch(restoreProduct(data.productSlicing));
+        }if (data.addProductSlice) {
+          store.dispatch(restore(data.addProductSlice))
         }
       }
     } catch {
