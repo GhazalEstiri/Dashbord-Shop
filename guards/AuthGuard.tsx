@@ -1,15 +1,14 @@
 "use client";
-
 import { useSelector } from "react-redux";
 import type { Rootstate } from "@/lib/store";
 import { usePathname, useRouter } from "next/navigation";
-import {  useState,useEffect } from "react";
+import {  useEffect } from "react";
 import { useMounted } from "@/hooks/use-mounted";
 
 const routeRoles: Record<string, string[]> = {
   "/dashbord": ["admin", "vendor", "user"],
   "/account": ["admin", "vendor", "user"],
-
+  "/addProduct": ["admin", "vendor"],
   "/adress": ["user"],
   "/comment": ["user"],
   "/orderstatus": ["user"],
@@ -33,9 +32,8 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const normalizedPath = pathname.replace(/^\/(fa|en)(?=\/|$)/, "") || "/";
   const allowedRoles = routeRoles[normalizedPath];
 
- 
   useEffect(() => {
-    if (!mounted ||!initialized) return;
+    if (!mounted || !initialized) return;
 
     if (!user) {
       router.replace("/login");

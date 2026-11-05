@@ -20,7 +20,7 @@ import {
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import type { Rootstate } from "@/lib/store";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLocale, useTranslations } from "next-intl";
 type Role = "admin" | "user" | "vendor";
@@ -55,11 +55,11 @@ const menuItemRole = {
       href: "/report",
       icon: MessageSquareWarning,
     },
-    // {
-    //   title: "orderManager",
-    //   href: "/orderManager",
-    //   icon: ShoppingCartMinus,
-    // },
+    {
+      title: "addProduct",
+      href: "/addProduct",
+      icon: ShoppingCartMinus,
+    },
 
     {
       title: "account",
@@ -109,8 +109,8 @@ function SideBar() {
   const locale = useLocale();
   const pathname = usePathname();
   const roleUser = useSelector((state: Rootstate) => state.auth.user?.role);
-  const initialized  = useSelector((state:Rootstate)=>state.auth.initialized)
-  if (!initialized||!roleUser) {
+  const initialized = useSelector((state: Rootstate) => state.auth.initialized);
+  if (!initialized || !roleUser) {
     return null;
   }
   const menuItems = menuItemRole[roleUser];

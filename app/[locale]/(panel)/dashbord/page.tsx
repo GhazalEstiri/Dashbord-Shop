@@ -1,4 +1,5 @@
 "use client";
+
 import { useSelector } from "react-redux";
 import type { Rootstate } from "@/lib/store";
 import SalesChart from "@/component/dashbord/SalesChart";

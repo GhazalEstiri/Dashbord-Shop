@@ -35,7 +35,8 @@
     "vendorManager": "Store Management",
     "vendorpanel": "Vendor Panel",
     "vitrin": "Vitrin",
-    "changeLang": "Change Language"
+    "changeLang": "Change Language",
+    "addProduct":"addProduct"
   },
 
   "Account": {
@@ -265,5 +266,8 @@
     "neginPath": "Enghelab Street, between Razi and Khark Streets, end of Anjoman Ketab Alley",
     "saeedHome": "Saeed's Home",
     "saeedPath": "Valiasr Street, beginning of Zafaraniyeh Street, corner of Baghdadi Street"
+  },
+  "AddProducts":{
+    "title":"Add Product"
   }
 }
