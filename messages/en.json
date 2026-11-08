@@ -36,7 +36,7 @@
     "vendorpanel": "Vendor Panel",
     "vitrin": "Vitrin",
     "changeLang": "Change Language",
-    "addProduct":"addProduct"
+    "addProduct": "addProduct"
   },
 
   "Account": {
@@ -267,7 +267,31 @@
     "saeedHome": "Saeed's Home",
     "saeedPath": "Valiasr Street, beginning of Zafaraniyeh Street, corner of Baghdadi Street"
   },
-  "AddProducts":{
-    "title":"Add Product"
+  "AddProducts": {
+    "title": "Add Product",
+    "description": "You can view your products along with their latest stock dates.",
+    "category": "Category:",
+    "price": "Price:",
+    "image": "Product Image:",
+    "imagePreview": "Product Image Preview",
+    "productTitle": "Product Title:",
+    "titlePlaceholder": "Enter product title.",
+    "productPrice": "Product Price:",
+    "pricePlaceholder": "Enter product price.",
+    "selectCategory": "Select Category:",
+    "all": "All",
+    "categories": {
+      "hygiene": "Hygiene",
+      "cosmetics": "Cosmetics",
+      "skincare": "Skincare",
+      "hairCare": "Hair Care",
+      "novelty": "Novelty",
+      "giftItems": "Gift Items"
+    },
+    "add": "Add Product",
+    "delete": "Delete Product",
+    "close": "Close",
+    "selectDate": "Select Date:",
+    "selectDateError": "Please select a date."
   }
 }

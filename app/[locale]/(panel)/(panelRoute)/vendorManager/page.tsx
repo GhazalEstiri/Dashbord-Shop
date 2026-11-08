@@ -74,7 +74,7 @@ export default function VendorManager() {
               <div
                 key={item.id}
                 className="group rounded-2xl border border-white/10 bg-second-background p-5 "
-              >
+                 >
                 <div className="flex  flex-row gap-4">
                   <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl border border-[#FABE2C]/20 bg-second-background text-foreground">
                     <Store size={27} />

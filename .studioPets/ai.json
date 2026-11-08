@@ -1,0 +1,6 @@
+{
+  "provider": "ollama",
+  "endpoint": "http://localhost:11434/api/chat",
+  "model": "Qwen2.5:3b",
+  "apiKey": ""
+}

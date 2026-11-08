@@ -152,7 +152,7 @@ export default function Product() {
               value={title}
               placeholder={t("productNamePlaceholder")}
               onChange={(e) => setTitle(e.target.value)}
-              className="bg-background h-10 outline-none "
+              className="bg-background h-10 outline-none pr-5 pl-5"
             />
             <p className="text-foreground">{t("productPrice")}</p>
 
@@ -161,7 +161,7 @@ export default function Product() {
               value={price}
               placeholder={t("productPricePlaceholder")}
               onChange={(e) => setPrice(e.target.value)}
-              className="bg-second-background h-10 outline-none"
+              className="bg-second-background h-10 outline-none pr-5 pl-5"
             />
             <div className="bg-background text-text-base w-full">
               <p className="text-foreground"> {t("productStatus")}</p>
@@ -171,7 +171,7 @@ export default function Product() {
                 onChange={(e) =>
                   setStatus(e.target.value as "available" | "unavailable")
                 }
-                className=" text-text-title h-10 outline-none cursor-pointer"
+                className=" text-text-title h-10 outline-none cursor-pointer pr-5 pl-5"
               >
                 <option
                   value="available"

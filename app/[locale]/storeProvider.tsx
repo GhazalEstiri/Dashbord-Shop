@@ -109,36 +109,3 @@ export default function StoreProvider({
 
   return <Provider store={store}>{children}</Provider>;
 }
-
-// const a = {
-//   box: {
-//     items: [{ n: 1 }]
-//   }
-// };
-
-// const b = {
-//   ...a,
-//   box: {
-//     ...a.box,
-//     items: [...a.box.items]
-//   }
-// };
-
-// const c = {
-//   ...b,
-//   box: {
-//     ...b.box,
-//     items: [{ ...b.box.items[0] }]
-//   }
-// };
-
-// b.box.items[0].n = 2;
-// c.box.items.push({ n: 3 });
-// b.box.items = [...c.box.items];
-// b.box.items[0].n = 4;
-
-// console.log(a.box.items[0].n);
-// console.log(b.box.items[0].n);
-// console.log(c.box.items[0].n);
-// console.log(b.box.items === c.box.items);
-// console.log(b.box.items[0] === c.box.items[0]);
